@@ -1,12 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SignUp from "./Components/SignUp";
 
 function App() {
   return (
-    <div className="App">
-     <h1> My React app</h1>
-     <h2>Author : Siddhant Kamat</h2> 
-    </div>
+    <>
+      <SignUp />
+    </>
   );
 }
 

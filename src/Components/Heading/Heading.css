@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Avenir");
+/* .center1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} */
+.center2 {
+  display: flex;
+  justify-content: center;
+}
+p.h1 {
+  width: 251px;
+  height: 43px;
+  justify-content: center;
+  top: 100px;
+  text-align: center;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 43px;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+p.h2 {
+  justify-content: center;
+  width: 515px;
+  height: 33px;
+  top: 150px;
+  text-align: center;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 15px;
+}

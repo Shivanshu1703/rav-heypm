@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Karla");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.iconslist {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  justify-content: center;
+  /* align-items: center; */
+  width: 100vw;
+  /* width: 418px; */
+  top: 400px;
+  position: relative;
+  /* align-items: center; */
+}
+.icons {
+  /* position: absolute; */
+  /* text-align: center; */
+  /* justify-content: center; */
+  /* width: 60px; */
+  height: 24px;
+  /* left: 627px; */
+  top: 640px;
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #0126a8;
+  margin-right: 5px;
+  /* margin-left: 5px; */
+}
+.google {
+  /* position: absolute; */
+  width: 24px;
+  height: 24px;
+  /* left: 704px; */
+  top: 640px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.linkedin {
+  /* position: absolute; */
+  width: 24px;
+  height: 24px;
+  /* left: 750px; */
+  top: 640px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
