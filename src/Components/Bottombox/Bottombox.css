@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Avenir");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.b1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: 450px;
+  width: 100vw;
+}
+.b2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: 480px;
+  width: 100vw;
+}
+.b3 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  position: relative;
+  top: 500px;
+  width: 100vw;
+}
+.button {
+  /* position: absolute; */
+  width: 320px;
+  height: 60px;
+  /* left: 387px; */
+  /* top: 700px; */
+
+  border: 2px solid #797585;
+  box-sizing: border-box;
+  border-radius: 10px;
+  /* padding-right: 100px;  */
+}
+.button1 {
+  /* position: absolute; */
+  width: 320px;
+  height: 60px;
+  /* left: 731px; */
+  /* top: 700px; */
+  background: #797585;
+  border: 2px solid #797585;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.heading {
+  /* position: absolute; */
+  width: 334px;
+  height: 48px;
+  /* left: 375px; */
+  /* top: 770px; */
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.heading1 {
+  /* position: absolute; */
+  width: 334px;
+  height: 48px;
+  /* left: 720px; */
+  /* top: 770px; */
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+.secondLast {
+  /* position: absolute; */
+  width: 110px;
+  height: 19px;
+  /* left: 665px; */
+  /* top: 850px; */
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.6);
+}
+span.l1 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #0126a8;
+}
+span.l2 {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.lastLine {
+  /* position: absolute; */
+  width: 206px;
+  height: 19px;
+  /* left: 617px; */
+  /* top: 878px; */
+  padding-bottom: 50px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}

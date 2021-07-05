@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Zeyada");
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  /* width: 100vw; */
+}
+.Nav {
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: 1px;
+  padding-left: 110px;
+  padding-right: 110px;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.polyimg {
+  box-sizing: border-box;
+}
+.ravimg {
+  font-family: "Zeyada";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 51px;
+  line-height: 75px;
+  color: #0126a8;
+}
+.vector {
+  height: 54px;
+  width: 50px;
+  color: #0126a8;
+}
