@@ -19,6 +19,8 @@
 
 .polyimg {
   box-sizing: border-box;
+  color: #0126a8;
+  height: 35px;
 }
 .ravimg {
   font-family: "Zeyada";

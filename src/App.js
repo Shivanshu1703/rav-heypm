@@ -1,12 +1,15 @@
 import React from "react";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <>
-      {/* <SignUp /> */}
-      <Login />
+      <Switch>
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={Login} />
+      </Switch>
     </>
   );
 }
