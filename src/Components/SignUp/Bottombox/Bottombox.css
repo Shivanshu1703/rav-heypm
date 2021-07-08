@@ -10,7 +10,7 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
-  top: 450px;
+  top: 410px;
   width: 100vw;
 }
 .b2 {
@@ -18,7 +18,7 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
-  top: 480px;
+  top: 430px;
   width: 100vw;
 }
 .b3 {
@@ -27,7 +27,7 @@
   /* justify-content: center; */
   align-items: center;
   position: relative;
-  top: 500px;
+  top: 450px;
   width: 100vw;
 }
 .button {
@@ -40,6 +40,7 @@
   border: 2px solid #797585;
   box-sizing: border-box;
   border-radius: 10px;
+  outline: none;
   /* padding-right: 100px;  */
 }
 .button1 {
@@ -52,6 +53,7 @@
   border: 2px solid #797585;
   box-sizing: border-box;
   border-radius: 10px;
+  outline: none;
   margin-left: 10px;
 }
 .heading {

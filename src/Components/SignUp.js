@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "./Navbar/Navbar";
-import Heading from "./Heading/Heading";
-import Input from "./Input/Input";
-import Icons from "./Icons/Icons";
-import Bottombox from "./Bottombox/Bottombox";
+import Navbar from "./SignUp/Navbar/Navbar";
+import Heading from "./SignUp/Heading/Heading";
+import Input from "./SignUp/Input/Input";
+import Icons from "./SignUp/Icons/Icons";
+import Bottombox from "./SignUp/Bottombox/Bottombox";
 
 function SignUp() {
   return (
@@ -12,7 +12,7 @@ function SignUp() {
         <Navbar />
         <Heading />
         <Input />
-        <Icons />
+        {/* <Icons /> */}
         <Bottombox />
       </div>
     </div>
