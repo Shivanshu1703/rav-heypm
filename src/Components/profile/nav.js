@@ -1,6 +1,6 @@
 import React from 'react'
 import img from './images/Polygon.png'
-
+import "./nav.css"
 
 export default function Nav (){
     return (

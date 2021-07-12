@@ -1,9 +1,11 @@
 import React  from 'react'
 import img4 from './images/Polygon.png'
+import './footer.css'
 
 export default function Footer() {
     return (
         <>
+        <div className="foo">
           <div className="upfooter">
 
               <div className="rav">
@@ -26,7 +28,7 @@ export default function Footer() {
               </div>
 
         </div>
-    
+        </div>
         </>
     )
 }

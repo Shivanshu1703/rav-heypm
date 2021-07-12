@@ -1,4 +1,5 @@
 import React from 'react'
+import "./review.css"
 
 
 export default function Reviews() {
@@ -9,20 +10,20 @@ export default function Reviews() {
                       <textarea className="about" name="aboutreview" rows="4" cols="50">
                
                       </textarea> <br/>
-                       <hr/>
+                       {/* <hr/> */}
                       <textarea className="about" name="aboutreview" rows="4" cols="50">
           
                        </textarea> <br/>
-                      <hr/>
+                      {/* <hr/> */}
                       
                        <textarea className="about" name="aboutreview" rows="4" cols="50">
                
                        </textarea> <br/>
-                       <hr/>
+                       {/* <hr/> */}
                        <textarea className="about" name="aboutreview" rows="4" cols="50">
    
                        </textarea> <br/>
-                        <hr/>
+                        {/* <hr/> */}
                   </div>
                
 

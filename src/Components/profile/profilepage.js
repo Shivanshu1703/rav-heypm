@@ -1,5 +1,5 @@
 import React  from 'react'
-import "./profile.css"
+import "./profilepage.css"
 import Nav from "./nav.js"
 import Profilepic from "./profilepic"
 import Footer from "./footer"
@@ -10,10 +10,12 @@ export default function Profilepage() {
 
     return (
         <>
+        <div className="profile">
          <Nav/>
          <Profilepic/>
          <Footer/>
          <Footerdown/> 
+         </div>
         </>
     )
 }

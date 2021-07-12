@@ -2,8 +2,7 @@ import React,{setState} from  'react'
 import Bio from './bio'
 import Reviews from './reviews'
 import img1 from './images/profilepic.png'
-
-
+import "./profilepic.css"
 class Profilepic extends React.Component {
 
 
@@ -44,10 +43,14 @@ class Profilepic extends React.Component {
                  <button id="hi" >Say Hi!</button>
                </div>
 
-               <nav className="centre1">
+               <div className="centre1">
+                    {/* <div className="b1"> */}
                      <button className="bio"   onClick={this.toggleShowBio} >Bio</button>
+                    {/* </div> */}
+                     {/* <div className="b2"> */}
                      <button className="view"  onClick={this.toggleShowBio}>Reviews</button> 
-               </nav> 
+                     {/* </div> */}
+               </div> 
 
                <div className="review">{ this.state.showBio ? <Bio/> : <Reviews/>}</div>
             </div>

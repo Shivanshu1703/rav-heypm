@@ -1,0 +1,23 @@
+.designbutton{
+    border: 2px solid #00BCC8;
+    border-radius: 10px;
+    padding: 9px 10px 8px 10px;
+    display: inline-flex;
+    justify-items:center;
+  }
+  
+.heading{
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0126A8;
+
+  }
+  .line{
+    width: 60%;
+  }
+ 

@@ -1,5 +1,6 @@
 import React from 'react'
 import  img5 from './images/image.png'
+import "./footerdown.css"
 
 export default function Footerdown() {
     return (
