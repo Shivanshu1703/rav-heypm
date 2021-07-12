@@ -1,0 +1,50 @@
+.header{
+    height:86px;
+    display: flex;
+    justify-content:row ;
+    width: 100em;
+   }
+
+   .poly1{
+    padding-top:17px ;
+    padding-left: 135px;
+    
+    color: #0126a8;
+    height: 55px;
+    
+    
+  }
+  .grid{
+    
+    padding-top:24px ;
+    padding-left: 74px; 
+    padding-right: 111px;
+    padding-bottom:50px ;
+  }
+  
+  .home{
+    padding: 36px 54px 20px 1000px;
+  }
+  
+  .border{
+    background-color:#00D8AC80; 
+    height:171px;
+    width: 100em;
+  }
+
+  .ravimg {
+    font-family: "Zeyada";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 51px;
+    line-height: 75px;
+    color: #0126a8;
+    padding-top: 13px;
+  }
+
+  .profilebutton{
+    Padding: 12px 24px 12px 24px;
+    background-color: #0126A8;
+    border-radius:10px ;
+    color: white;
+  } 
