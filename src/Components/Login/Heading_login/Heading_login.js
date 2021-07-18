@@ -4,13 +4,12 @@ import "./Heading_login.css";
 function Heading_login() {
   return (
     <div id="Welcome">
-      
-            <div id= "loginheading">
-                <p>Welcome Back!</p>
-            </div>
-            <div id= "loginsubheading">
-                <h5> A place to meet mentors in global community</h5>
-            </div>
+      <div id="loginheading">
+        <p>Welcome Back!</p>
+      </div>
+      <div id="loginsubheading">
+        <p>A place to meet mentors in global community</p>
+      </div>
     </div>
   );
 }

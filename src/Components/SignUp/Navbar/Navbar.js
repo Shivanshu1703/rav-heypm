@@ -17,7 +17,7 @@ function Navbar() {
 
         <span className="ravimg">Rav</span>
       </div>
-      <Icon icon={closeCircleOutline} className="vector" />
+      {/* <Icon icon={closeCircleOutline} className="vector" /> */}
       {/* <img src="Vector.png" alt="" className="vector" /> */}
     </div>
   );

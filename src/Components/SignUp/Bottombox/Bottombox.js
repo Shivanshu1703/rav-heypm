@@ -6,21 +6,21 @@ function Bottombox() {
     <div>
       <div className="b1">
         <div>
-          <button className="button">
+          <button className="button" style={{ cursor: "pointer" }}>
             <span className="l1">Sign me up as Mentee</span>
           </button>
         </div>
         <div>
-          <button className="button1">
+          <button className="button1" style={{ cursor: "pointer" }}>
             <span className="l2">Sign me up as Mentor</span>
           </button>
         </div>
       </div>
       <div className="b2">
-        <p className="heading">
+        <p className="heading1">
           I am seeking advice and guidance from the mentors
         </p>
-        <p className="heading">
+        <p className="heading1">
           I would be able to offer my guidance to those who need it
         </p>
       </div>

@@ -10,7 +10,6 @@ function Heading() {
         </p>
       </div>
       <div className="center2">
-        {/* <h3 style={{ textAlign: "center", padding: 5 }}> */}
         <p className="h2">A place to meet mentors in global community</p>
       </div>
     </div>
