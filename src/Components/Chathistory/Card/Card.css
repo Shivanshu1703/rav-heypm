@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+.Cards {
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  flex-direction: row; */
+}
+/* .Separator {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+} */
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 484px;
+  height: 412px;
+  /* left: 135px; */
+  /* White */
+
+  background: #ffffff;
+  /* Black */
+
+  border: 3px solid #303031;
+  box-sizing: border-box;
+  border-radius: 16px;
+  float: left;
+  margin: 30px;
+  margin-left: 0px;
+}
+.Upper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.Leftupper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  width: 117px;
+  height: 236px;
+  margin: 20px;
+}
+.Rightupper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  height: 236px;
+  margin: 20px;
+}
+/* .Image {
+  margin: 10px;
+} */
+.Image img {
+  /* background: white; */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  /* margin: 25px 15px 20px 22px; */
+}
+.Name {
+  /* margin-top: 36px;
+  margin-left: 10px; */
+  margin-bottom: 20px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+  letter-spacing: -0.02em;
+  /* Black */
+  color: #303031;
+}
+.Title {
+  margin-bottom: 30px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  letter-spacing: -0.02em;
+  /* Gray */
+  color: #66645e;
+}
+.History {
+  font-family: Open Sans;
+  font-style: normal;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+
+  letter-spacing: -0.02em;
+
+  color: rgba(48, 48, 49, 0.9);
+}
+.Lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Button {
+  display: flex;
+  flex-direction: column;
+  width: 404px;
+  /* height: 56px;
+  left: 40px;
+  top: 324px; */
+  align-items: center;
+  background: #303031;
+  border-radius: 16px;
+}
+.Button1 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+  background: #303031;
+  border: transparent;
+  /* identical to box height, or 133% */
+
+  letter-spacing: -0.02em;
+  outline: none;
+  cursor: pointer;
+
+  /* White */
+
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 10px 0px;
+}
