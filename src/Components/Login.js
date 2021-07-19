@@ -6,7 +6,11 @@ import Logintosignup from "./Login/Logintosignup/Logintosignup";
 function Login() {
   return (
     <div>
-      <div>
+      <div style={{
+        background: `url('${process.env.PUBLIC_URL}/Group 71.png')`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "100% 50%",
+      }}>
         <Navbar />
         <Heading_login />
         <Input_form_login />

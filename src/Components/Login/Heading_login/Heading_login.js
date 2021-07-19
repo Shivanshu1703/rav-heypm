@@ -9,6 +9,7 @@ function Heading_login() {
       </div>
       <div id="loginsubheading">
         <p>A place to meet mentors in global community</p>
+        {/* <img src={process.env.PUBLIC_URL+"/Group 71.png"}/> */}
       </div>
     </div>
   );
