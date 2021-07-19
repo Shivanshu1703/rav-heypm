@@ -1,5 +1,6 @@
 import React from "react";
 import "./Heading.css";
+import {auth} from '../../../firebase'
 
 function Heading() {
   return (

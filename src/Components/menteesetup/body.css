@@ -1,0 +1,157 @@
+
+.text{
+ color :black;
+ font-family: Lato;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: 43px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.jean{
+  color: blue;  
+}
+
+
+.container{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    height: 900px;
+}
+
+.row1{
+    display: flex;
+    flex-direction: row;
+    height: 88px;
+    margin-left: 231px; 
+}
+.row2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.row3{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+.inputfield{
+font-family: Lato;
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+
+
+width: 418px;
+height: 46px;
+padding-left:22px;
+background: rgba(1, 38, 168, 0.05);
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.ellipse1{
+    margin-left: 800px;
+    margin-bottom: 50px;
+}
+
+.ellipse2{
+    margin-left: 120px;
+}
+
+.vector{
+    margin-left: 500px;   
+}
+
+.inputbox{
+    margin-left: 180px;
+   
+}
+
+
+
+.qualification{
+    margin-top: 40px;
+}
+
+.company{
+    margin-top: 40px;  
+}
+
+.designation{
+    margin-top: 40px;
+}
+.pastcomp{
+    margin-top: 40px;
+}
+
+.linkurl{
+    margin-top: 40px; 
+}
+
+.about{
+    margin-top: 40px; 
+}
+
+.textarea{
+height:60px ;
+width: 100%;
+background: rgba(1, 38, 168, 0.05);
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+.create{
+ margin-left: 600px;
+}
+.cancel{
+  margin-left: 20px;
+}
+
+#button1{
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius:10px ;
+    background: #FFFFFF;
+    padding: 13px 24px 13px 24px;
+}
+#button2{
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius:10px ;
+    padding: 13px 24px 13px 24px;
+    color:white;
+    background-color: blue;
+}
+.label{
+   width: 200px;
+   display: inline-block;
+   font-family: Lato;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+
+}

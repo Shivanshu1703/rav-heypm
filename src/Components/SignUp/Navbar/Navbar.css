@@ -19,7 +19,7 @@ body {
   /* border-style: solid; */
   border-width: 1px;
   padding-left: 110px;
-  padding-right: 110px;
+  padding-right: 100px;
   border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -40,4 +40,15 @@ body {
   height: 54px;
   width: 50px;
   color: #0126a8;
+  
+}
+.logoutbutton{
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  font-style: normal;
+  background-color: #0126a8;
+  color:white;
+}
+.logout{
+  padding-top: 10px;
 }

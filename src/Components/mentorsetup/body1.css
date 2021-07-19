@@ -1,0 +1,17 @@
+.next{
+    margin-left: 600px;
+ }
+
+ #button{
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius:10px ;
+    padding: 13px 24px 13px 24px;
+    color:white;
+    background-color: blue;
+}
