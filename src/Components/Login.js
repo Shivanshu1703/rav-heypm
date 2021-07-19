@@ -1,13 +1,26 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Navbar from "./SignUp/Navbar/Navbar";
 import Heading_login from "./Login/Heading_login/Heading_login";
 import Input_form_login from "./Login/Input_form_login/Input_form_login";
 import Logintosignup from "./Login/Logintosignup/Logintosignup";
+import {auth} from '../firebase'
+
+
 function Login() {
+
+  const [user,setUser] =useState(null)
+
+  useEffect(() => {
+     auth.onAuthStateChanged( user => {
+       if(user) setUser(user)
+       else setUser(null)
+     })
+  }, []) 
+
   return (
     <div>
       <div>
-        <Navbar />
+        <Navbar user={user}/>
         <Heading_login />
         <Input_form_login />
         <Logintosignup />

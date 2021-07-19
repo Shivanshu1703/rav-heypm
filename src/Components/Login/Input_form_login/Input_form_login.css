@@ -42,5 +42,14 @@ text-align: center;
     justify-content: space-between;
 }
 #buttonalignment{
-    padding-bottom: 42px;;
+    padding-bottom: 42px;
+}
+.signinwithgoogle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.googlelogo{
+   padding-left: 10px;
 }
