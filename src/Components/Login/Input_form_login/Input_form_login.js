@@ -1,3 +1,4 @@
+
 import React ,{useState} from "react";
 import "./Input_form_login.css"
 import { auth, provider } from "../../../firebase"
@@ -99,7 +100,7 @@ function Input_form_login(){
                     <img src={img1} className="googlelogo"  onClick={logInwithgoogle} />
                   </div>
             </form>
-        </div>
-        );
+    </div>
+  );
 }
 export default Input_form_login;

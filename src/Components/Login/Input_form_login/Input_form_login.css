@@ -1,3 +1,4 @@
+
 #login{
     display: flex;
     justify-content: center;
@@ -53,3 +54,49 @@ text-align: center;
 .googlelogo{
    padding-left: 10px;
 }
+
+#login {
+  display: flex;
+  justify-content: center;
+}
+#email_id {
+  width: 418px;
+  height: 66px;
+  padding-left: 10px;
+  background: rgba(1, 38, 168, 0.05);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+#password {
+  width: 418px;
+  height: 66px;
+  padding-left: 10px;
+  background: rgba(1, 38, 168, 0.05);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+#loginbutton {
+  color: white;
+  width: 418px;
+  height: 66px;
+  background: #797585;
+  border-radius: 10px;
+  text-align: center;
+}
+#emailheading {
+  font-size: small;
+}
+#passwordheading {
+  font-size: small;
+}
+#rememberandforgot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#buttonalignment {
+  padding-bottom: 42px;
+}
+

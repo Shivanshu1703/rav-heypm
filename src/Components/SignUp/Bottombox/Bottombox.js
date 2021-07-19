@@ -26,21 +26,21 @@ function Bottombox() {
     <div>
       <div className="b1"> 
         <div>
-          <button className="button" onClick={signUp} >
+          <button className="button" style={{ cursor: "pointer" }} onClick={signUp} >
             <span className="l1">Sign me up as Mentee</span>
           </button>
         </div>
         <div>
-          <button className="button1"  onClick={signUp} >
+          <button className="button1" style={{ cursor: "pointer" }} onClick={signUp} >
             <span className="l2">Sign me up as Mentor</span>
           </button>
         </div>
       </div>
       <div className="b2">
-        <p className="heading">
+        <p className="heading1">
           I am seeking advice and guidance from the mentors
         </p>
-        <p className="heading">
+        <p className="heading1">
           I would be able to offer my guidance to those who need it
         </p>
       </div>

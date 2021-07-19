@@ -5,6 +5,9 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 import {auth} from '../../../firebase'
 import {Link ,useHistory} from "react-router-dom"
 
+// import React from "react";
+// import "./Input.css";
+
 function Input() {
   function sendEmail(e) {
     e.preventDefault();
@@ -93,7 +96,7 @@ function Input() {
               }
             />
           </div>
-          <div className="center3">
+          <div>
             <p className="innerheading">Email Address</p>
             <input
               type="email"
@@ -105,7 +108,7 @@ function Input() {
               }
             />
           </div>
-          <div className="center3">
+          <div>
             <p className="innerheading">Password</p>
             <input
               type="Password"
@@ -116,7 +119,7 @@ function Input() {
               }
             />
           </div>
-          <div className="center3">
+          <div>
             <p className="innerheading">Confirm Password</p>
             <input
               type="Confirm Password"
@@ -138,3 +141,48 @@ function Input() {
 }
 
 export default Input;
+
+// function Input() {
+//   return (
+//     <div>
+//       <div className="alignment">
+//         <form className="center">
+//           <p className="innerheading">Your Name</p>
+//           <div className="center3">
+//             <input
+//               type="Name"
+//               className="input-box"
+//               placeholder="Your full name"
+//             />
+//           </div>
+//           <div className="center3">
+//             <p className="innerheading">Email Address</p>
+//             <input
+//               type="email"
+//               className="input-box"
+//               placeholder="Your email address"
+//             />
+//           </div>
+//           <div className="center3">
+//             <p className="innerheading">Password</p>
+//             <input
+//               type="Password"
+//               className="input-box"
+//               placeholder="Password"
+//             />
+//           </div>
+//           <div className="center3">
+//             <p className="innerheading">Confirm Password</p>
+//             <input
+//               type="Confirm Password"
+//               className="input-box"
+//               placeholder="Confirm Password"
+//             />
+//           </div>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Input;

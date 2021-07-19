@@ -1,0 +1,7 @@
+.Bigcomp {
+  margin-top: 30px;
+  padding-right: 110px;
+  padding-left: 110px;
+  display: flex;
+  flex-direction: column;
+}

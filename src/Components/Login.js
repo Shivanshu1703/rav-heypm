@@ -21,6 +21,14 @@ function Login() {
     <div>
       <div>
         <Navbar user={user}/>
+
+      <div style={{
+        background: `url('${process.env.PUBLIC_URL}/Group 71.png')`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "100% 50%",
+      }}>
+       
+
         <Heading_login />
         <Input_form_login />
         <Logintosignup />

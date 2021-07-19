@@ -7,7 +7,7 @@ function Logintosignup(){
     return(
         <div id="tosignup">
             <div id="signup">
-                <p>Create an account? <Link to="SignUp"> Signup </Link>  </p>
+                <p>Create an account? <Link to="SignUp"> <span className = "bluetext" >Signup </span> </Link>  </p>
             </div>
         </div>
     );

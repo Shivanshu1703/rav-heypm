@@ -1,29 +1,23 @@
-.foot{
-    font-family: Avenir;
-    font-size: 18px;
-    font-style: normal;
-    color: #0126A8;
-   
-    padding-left: 12px;
-    padding-top: 29px;
-    padding-bottom: 29px;
-   
-  
-  }
+.foot {
+  font-family: Avenir;
+  font-size: 18px;
+  font-style: normal;
+  color: #0126a8;
 
-  
-  
-  .clogo{
-    padding-top: 23px;
-    padding-bottom:30px ;
-    padding-left: 135px;
-  
-  }
+  padding-left: 12px;
+  padding-top: 29px;
+  padding-bottom: 29px;
+}
 
-  .footer{
-    display:flex;
-    flex-direction: row;
-    height: 80px;
-    width: 100em;
-  }
-  
+.clogo {
+  padding-top: 23px;
+  padding-bottom: 30px;
+  padding-left: 135px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  /* height: 80px; */
+  width: 100%;
+}
