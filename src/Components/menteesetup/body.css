@@ -1,157 +1,165 @@
-
-.text{
- color :black;
- font-family: Lato;
-font-size: 36px;
-font-style: normal;
-font-weight: 700;
-line-height: 43px;
-letter-spacing: 0em;
-text-align: left;
-
+.textmentee {
+  color: black;
+  font-family: Lato;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
 }
-.jean{
-  color: blue;  
+.jeanmentee {
+  color: blue;
 }
-
-
-.container{
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
-    height: 900px;
+input[type="file"] {
+  color: transparent;
 }
-
-.row1{
-    display: flex;
-    flex-direction: row;
-    height: 88px;
-    margin-left: 231px; 
-}
-.row2{
-    display: flex;
-    flex-direction: row;
-    margin-top: 50px;
+.containermentee {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  height: 900px;
 }
 
-.row3{
-    display: flex;
-    flex-direction: row;
-    margin-top: 40px;
+.row1mentee {
+  display: flex;
+  flex-direction: row;
+  height: 88px;
+  margin-left: 185px;
+}
+.row2mentee {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 170px;
 }
 
-.inputfield{
-font-family: Lato;
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-
-
-width: 418px;
-height: 46px;
-padding-left:22px;
-background: rgba(1, 38, 168, 0.05);
-border: 1px solid #000000;
-box-sizing: border-box;
-border-radius: 10px;
-}
-.ellipse1{
-    margin-left: 800px;
-    margin-bottom: 50px;
+.row3mentee {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
 }
 
-.ellipse2{
-    margin-left: 120px;
+.inputfieldmentee {
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 418px;
+  height: 46px;
+  padding-left: 22px;
+  background: rgba(1, 38, 168, 0.05);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+}
+.ellipse1mentee {
+  margin-left: 800px;
+  margin-bottom: 50px;
 }
 
-.vector{
-    margin-left: 500px;   
+.ellipse2mentee {
+  margin-left: 120px;
 }
 
-.inputbox{
-    margin-left: 180px;
-   
+.vectormentee {
+  margin-left: 500px;
 }
 
-
-
-.qualification{
-    margin-top: 40px;
+.inputboxmentee {
+  margin-left: 180px;
 }
 
-.company{
-    margin-top: 40px;  
+.qualificationmentee {
+  margin-top: 40px;
 }
 
-.designation{
-    margin-top: 40px;
-}
-.pastcomp{
-    margin-top: 40px;
+.companymentee {
+  margin-top: 40px;
 }
 
-.linkurl{
-    margin-top: 40px; 
+.designationmentee {
+  margin-top: 40px;
+}
+.pastcompmentee {
+  margin-top: 40px;
 }
 
-.about{
-    margin-top: 40px; 
+.linkurlmentee {
+  margin-top: 40px;
 }
 
-.textarea{
-height:60px ;
-width: 100%;
-background: rgba(1, 38, 168, 0.05);
-border: 1px solid #000000;
-box-sizing: border-box;
-border-radius: 10px;
+.aboutmentee {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  margin-top: 40px;
 }
 
-.create{
- margin-left: 600px;
+.textareamentee {
+  height: 60px;
+  width: 100%;
+  background: rgba(1, 38, 168, 0.05);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+  resize: none;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 22px;
+  outline: none;
 }
-.cancel{
+
+.creatementee {
+  margin-left: 550px;
+}
+.cancelmentee {
   margin-left: 20px;
 }
 
-#button1{
-    font-family: Lato;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
-    border-radius:10px ;
-    background: #FFFFFF;
-    padding: 13px 24px 13px 24px;
+#button1mentee {
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 13px 24px 13px 24px;
 }
-#button2{
-    font-family: Lato;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px;
-    letter-spacing: 0em;
-    text-align: left;
-    border-radius:10px ;
-    padding: 13px 24px 13px 24px;
-    color:white;
-    background-color: blue;
+#button2mentee {
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  border-radius: 10px;
+  padding: 13px 24px 13px 24px;
+  color: white;
+  background-color: blue;
 }
-.label{
-   width: 200px;
-   display: inline-block;
-   font-family: Lato;
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 600;
-   line-height: 22px;
-   letter-spacing: 0em;
-   text-align: left;
-
+.labelmentee {
+  width: 200px;
+  display: inline-block;
+  font-family: Lato;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
 }

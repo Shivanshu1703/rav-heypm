@@ -1,10 +1,12 @@
-import React  from 'react'
-import "./menteenav.css"
+import React from "react";
+// import "./menteenav.css";
+import Nav from "../profile/nav";
 
 export default function Menteenav() {
-    return (
-        <div>
-             <div className="header">
+  return (
+    <div>
+      <Nav />
+      {/* <div className="header">
                <img src={process.env.PUBLIC_URL+"/Polygon.png"} className="poly1" />
                <span className="ravimg">Rav</span>
            
@@ -15,7 +17,7 @@ export default function Menteenav() {
                 <button className="profilebutton"> grid </button>
              </div>
           </div>
-          <hr className="line"/>
-        </div>
-    )
+          <hr className="line"/> */}
+    </div>
+  );
 }

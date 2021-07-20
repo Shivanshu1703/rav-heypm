@@ -9,7 +9,7 @@ import triangleDown from "@iconify-icons/zmdi/triangle-down";
 export default function Nav() {
   return (
     <>
-      <div className="header">
+      <div className="headernavprofile">
         <div className="Leftheader">
           {/* <img src={img} className="poly1" /> */}
           {/* <span className="ravimg">Rav</span> */}
@@ -48,7 +48,7 @@ export default function Nav() {
         </div>
       </div>
 
-      <div className="border"></div>
+      {/* <div className="border"></div> */}
     </>
   );
 }
