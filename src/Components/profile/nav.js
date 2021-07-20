@@ -11,8 +11,6 @@ export default function Nav() {
     <>
       <div className="headernavprofile">
         <div className="Leftheader">
-          {/* <img src={img} className="poly1" /> */}
-          {/* <span className="ravimg">Rav</span> */}
           <div>
             <Icon
               icon={triangleDown}
@@ -20,7 +18,9 @@ export default function Nav() {
               height="47px"
               className="polyimg"
             />
-            <span className="ravimg">Rav</span>
+          </div>
+          <div>
+            <span className="ravimg1">Rav</span>
           </div>
         </div>
         <div className="Rightheader">
@@ -34,15 +34,22 @@ export default function Nav() {
               <div className="gridImage">
                 <img src={profilepic} alt="" />
               </div>
-              <button className="profilebutton">
-                <Icon
-                  icon={hamburgerButton}
-                  color="White"
-                  width="30px"
-                  height="20px"
-                  className="hamburger"
-                />
-              </button>
+              <div className="dropdownprofile">
+                <button class className="profilebutton">
+                  <Icon
+                    icon={hamburgerButton}
+                    color="White"
+                    width="30px"
+                    height="20px"
+                    className="hamburger"
+                  />
+                </button>
+                <div class="dropdowncontent">
+                  <a href="#">My Profile</a>
+                  <a href="#">Chats</a>
+                  <a href="#">Logout</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

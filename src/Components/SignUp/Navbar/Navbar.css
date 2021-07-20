@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Zeyada");
 
 body {
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vw;
   margin: 10px;
 }
@@ -26,7 +26,7 @@ body {
 .polyimg {
   box-sizing: border-box;
   color: #0126a8;
-  height: 35px;
+  /* height: 35px; */
 }
 .ravimg {
   font-family: "Zeyada";
@@ -40,15 +40,14 @@ body {
   height: 54px;
   width: 50px;
   color: #0126a8;
-  
 }
-.logoutbutton{
+.logoutbutton {
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
   font-style: normal;
   background-color: #0126a8;
-  color:white;
+  color: white;
 }
-.logout{
+.logout {
   padding-top: 10px;
 }
