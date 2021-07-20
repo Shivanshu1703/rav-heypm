@@ -21,8 +21,7 @@ function Login() {
     <div>
       <div>
         <Navbar user={user}/>
-
-      <div style={{
+       <div style={{
         background: `url('${process.env.PUBLIC_URL}/Group 71.png')`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "100% 50%",
@@ -33,6 +32,7 @@ function Login() {
         <Input_form_login />
         <Logintosignup />
       </div>
+    </div>
     </div>
   );
 }

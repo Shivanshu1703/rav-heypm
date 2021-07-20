@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
 }
-.grid {
+  .grid {
   display: flex;
   flex-direction: row;
   width: 96px;
@@ -79,8 +79,10 @@
 
   background: #0126a8;
   border-radius: 20px;
-  /* padding: 12px 24px; */
-}
+  padding: 12px 24px;
+}  
+
+
 /* .hamburger {
   background: #0126a8;
 } */
