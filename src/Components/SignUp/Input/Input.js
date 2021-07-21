@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "./Input.css";
-// import Bottombox from "../Bottombox/Bottombox"
 import emailjs, { EmailJSResponseStatus } from "emailjs-com";
 import { auth } from "../../../firebase";
 import { Link, useHistory } from "react-router-dom";
+import Bottombox from "../Bottombox/Bottombox";
 
-// import React from "react";
-// import "./Input.css";
+
 
 function Input() {
   function sendEmail(e) {
@@ -25,6 +24,7 @@ function Input() {
       .catch((error) => {
         console.log(error.text);
       });
+
   }
 
   const [email, setEmail] = useState("");
@@ -67,19 +67,6 @@ function Input() {
         alert(errorMessage, errorCode);
       });
   };
-
-  //  function sendEmail(name,email){
-  //    Email.send({
-  //      Host: "smtp.gmail.com",
-  //      Username :"nitishkumar84049@gmail.com",
-  //      password: "qnvekabcxyfdflqk",
-  //      To: "nitishkumar84049@gmail.com",
-  //      From: " nitishkumar84049@gmail.com ",
-  //      Subject : `${name} sent you a message`,
-  //      Body: ` Name : ${name} <br/>
-  //              Email : ${email} `
-  //    }).then( (message)=>alert( "mail sent successfully") );
-  //  }
 
   return (
     <div>
@@ -128,6 +115,12 @@ function Input() {
           </div>
         </form>
       </div>
+           <Bottombox 
+            email={email}
+            password={password}
+            confirPassword={confirPassword}
+            name={name}
+           />
     </div>
   );
 }

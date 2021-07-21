@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./body1.css";
 import { db } from "../../firebase";
+import { useHistory } from 'react-router'
 
 export default function Body1() {
   const [jobtitle, setJobtitle] = useState("");
@@ -8,6 +9,7 @@ export default function Body1() {
   const [domain, setDomain] = useState("");
   const [industry, setIndustry] = useState("");
   const [education, setEducation] = useState("");
+  const history=useHistory()
 
   const handler = () => {
     const data = {
@@ -19,6 +21,7 @@ export default function Body1() {
     };
     db.collection("mentor").add(data);
     console.log(data);
+    history.push("/profilepage")
   };
 
   return (

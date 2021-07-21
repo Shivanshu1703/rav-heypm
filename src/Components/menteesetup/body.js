@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import "./body.css";
 import { db } from "../../firebase";
+import { useHistory } from 'react-router'
 
 export default function Body() {
-  const [latqual, setLatqual] = useState("");
+  // const [latqual, setLatqual] = useState("");
   const [currentcompany, setCurrentcompany] = useState("");
   const [designation, setDesignation] = useState("");
   const [pastcompany, setPastcompany] = useState("");
   const [linkurl, setLinkurl] = useState("");
   // const [textabout, setTextabout]=usestate("")
   const [uploadphoto, setUploadphoto] = useState("");
+  const history=useHistory() 
 
   const handler = () => {
     const data = {
       uploadphoto: uploadphoto,
-      latqual: latqual,
+      // latqual: latqual,
       currentcompany: currentcompany,
       designation: designation,
       pastcompany: pastcompany,
@@ -23,7 +25,9 @@ export default function Body() {
     };
     db.collection("mentee").add(data);
     console.log(data);
+    history.push("/profilepage")
   };
+
 
   return (
     <>
@@ -74,6 +78,7 @@ export default function Body() {
                 />
               </div>
 
+
               <div className="companymentee">
                 <label className="labelmentee">Current Company</label>
                 <input
@@ -83,6 +88,22 @@ export default function Body() {
                   onChange={(e) => setCurrentcompany(e.target.value)}
                 />
               </div>
+
+                    <div className="uploadphoto">
+                      <label className="label">Upload Photo</label>
+                        <input className="inputfield" type="file" placeholder="Choose a file to upload"
+                        accept="image"
+                        onChange={(e)=>setUploadphoto(e.target.vaue) }
+                        />
+                      </div>
+                       
+                       <div className="qualification">
+                       <label className="label">Latest Qualifiaction</label>
+                       <input className="inputfield" type="text" placeholder="Ex: MBA from IIMB"
+                        // onChange={(e)=>setLatqual(e.target.vaue) }
+                        />
+                       </div> 
+
 
               <div className="designationmentee">
                 <label className="labelmentee">Designation</label>
