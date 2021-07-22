@@ -1,4 +1,4 @@
-.foot {
+.footfind {
   /* padding: 20px; */
   background-color: #494554;
   position: fixed;
@@ -10,10 +10,10 @@
   left: 0;
   cursor: pointer;
 }
-.he {
+.hefind {
   margin-right: 260px;
 }
-.foot div {
+.footfind div {
   width: 100%;
   padding: 20px 0px;
 }

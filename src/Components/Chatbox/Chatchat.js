@@ -5,6 +5,12 @@ import SendMessage from "./SendMessage";
 import SignOut from "./SignOut";
 import Nav from "../profile/nav";
 import { flexbox } from "@material-ui/system";
+import Chatleftcard from "./Chatleftcard";
+import { Chatboxdata } from "./Chatboxdata";
+
+function Chatboxdatacard(val) {
+  return <Chatleftcard name={val.name} email={val.email} image={val.image} />;
+}
 
 function Chatchat() {
   const scroll = useRef();
@@ -13,7 +19,7 @@ function Chatchat() {
   const { uid } = auth.currentUser;
   useEffect(() => {
     db.collection("messages")
-      .where("uid", "in", [uid, "Gqkxol6E5cX9UTlSakw0vyVbdDz1"])
+      // .where("uid", "in", [uid, "Gqkxol6E5cX9UTlSakw0vyVbdDz1"])
       .orderBy("createdAt")
       // .limit(100)
       .onSnapshot((snapshot) => {
@@ -27,9 +33,17 @@ function Chatchat() {
         <Nav />
       </div>
 
-      <div className="midchatboxbox">
+      <div
+        className="midchatboxbox"
+        style={{
+          background: `url('${process.env.PUBLIC_URL}/Chatbox.png')`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "70% 35%",
+        }}
+      >
         <div className="midchatboxboxleft">
           <p>Start New Chat</p>
+          <div>{Chatboxdata.map(Chatboxdatacard)}</div>
         </div>
         <div className="msgschatbox">
           {messages.map(({ id, text, photoURL, uid }) => (

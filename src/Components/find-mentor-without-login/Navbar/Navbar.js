@@ -1,20 +1,20 @@
-import React from 'react'
-import './Navbar.css'
-import logo from './images/logo.png'
+import React from "react";
+import "./Navbar.css";
+import logo from "./images/logo.png";
 function Nav() {
   return (
-    <div className='nav'>
-      <div className='logo'>
-        <img src={logo} alt='' />
+    <div className="navwologin">
+      <div className="logowologin">
+        <img src={logo} alt="" />
       </div>
-      <div className='right-menu'>
+      <div className="right-menuwologin">
         <h6>Meet our mentors</h6>
-        <button className='login'>Login</button>
+        <button className="loginwologin">Login</button>
 
-        <button className='signup'>Signup</button>
+        <button className="signupwologin">Signup</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

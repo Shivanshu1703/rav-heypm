@@ -15,12 +15,24 @@
   /* width: 470px; */
   /* width: 30%; */
   /* height: 100vh; */
-
-  background: #f7f7f7;
 }
 .midchatboxboxleft {
   width: 30%;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
+  background: #f7f7f7;
+  /* position: fixed; */
+}
+.midchatboxboxleft p {
+  text-align: left;
+  margin: 5% 2%;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  color: #000000;
 }
 .msgschatbox p {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

@@ -1,15 +1,15 @@
-.nav {
+.navwologin {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: -20px;
 }
-.logo img {
+.logowologin img {
   margin-top: 10px;
   margin-left: 180px;
   width: 100px;
 }
-.right-menu {
+.right-menuwologin {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -17,24 +17,24 @@
   width: 30%;
 }
 
-.right-menu button {
+.right-menuwologin button {
   padding: 10px 10px;
   border: solid 1px black;
   margin: 0px 10px !important;
   border-radius: 5px;
 }
-.right-menu h6 {
+.right-menuwologin h6 {
   margin-right: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: #494554;
   line-height: 24.59px;
 }
-.login {
+.loginwologin {
   color: #000000;
   background-color: #ffffff;
 }
-.signup {
+.signupwologin {
   background-color: #0126a8;
   color: #ffffff;
 }

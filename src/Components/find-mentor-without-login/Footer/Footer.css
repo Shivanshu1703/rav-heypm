@@ -1,7 +1,7 @@
-.foot {
+.footwologin {
   /* padding: 20px; */
   background-color: #494554;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   width: 100%;
   margin: auto;
@@ -10,10 +10,10 @@
   left: 0;
   cursor: pointer;
 }
-.he {
+.hewologin {
   margin-right: 260px;
 }
-.foot div {
+.footwologin div {
   width: 100%;
   padding: 20px 0px;
 }

@@ -1,0 +1,44 @@
+.ChatleftcardCard {
+  display: flex;
+  flex-direction: row;
+  /* width: 30%; */
+}
+.Chatleftcardleft {
+  /* width: 30%; */
+  margin: 20px;
+}
+
+.Chatleftcardimage img {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+.Chatleftcardright {
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  /* justify-content: left; */
+  align-items: flex-start;
+  flex-direction: column;
+}
+.Chatleftcardname {
+  margin-bottom: 20px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+.Chatleftcardemail {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.line1 {
+  margin-top: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}

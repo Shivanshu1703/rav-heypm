@@ -1,8 +1,8 @@
-.search {
+.searchfind {
   display: flex;
   width: 80%;
 }
-.find {
+.findfind {
   font-size: 36px;
   line-height: 43.88px;
   font-weight: 700;
@@ -13,17 +13,17 @@
   margin-left: 250px;
   white-space: nowrap;
 }
-.input {
+.inputfind {
   margin-left: 200px;
   margin-right: 10px;
 }
-.input-t {
+.input-tfind {
   width: 382px;
   height: 48px;
   border-radius: 10px;
   padding-left: 10px;
 }
-.button {
+.buttonfind {
   background-color: #0126a8;
   color: #ffffff;
   padding: 10px 10px;
@@ -32,7 +32,7 @@
   border-radius: 10px;
 }
 
-.searched {
+.searchedfind {
   background-color: white;
   position: absolute;
   width: 97%;
@@ -42,13 +42,13 @@
   padding: 10px;
   z-index: 5;
 }
-.searched div {
+.searchedfind div {
   padding: 10px 0px;
   border-bottom: solid 1px black;
   width: 100%;
 }
 
-.people-box {
+.people-boxfind {
   width: 80%;
   margin-top: 20px;
   margin-left: 170px;
@@ -57,7 +57,7 @@
   flex-wrap: wrap;
 }
 
-.details {
+.detailsfind {
   position: relative;
   top: -80px;
   left: 25px;
@@ -65,7 +65,7 @@
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.details a:link,
+.detailsfind a:link,
 :visited {
   text-decoration: none;
   color: #ffffff;
@@ -73,11 +73,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.people {
+.peoplefind {
   border: black;
   margin-right: 20px;
 }
-.people img {
+.peoplefind img {
   width: 245px;
   height: 300px;
   border-radius: 20px;

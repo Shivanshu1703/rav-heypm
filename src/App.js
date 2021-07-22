@@ -10,7 +10,8 @@ import Schedule from "./Components/Schedule";
 import Landingpage from "./Components/Landingpage/Landingpage";
 import Chatbox from "./Components/Chatbox";
 import "./App.css";
-
+import FindMentorLogin from "./Components/FindMentorLogin";
+import FindMentorWithoutLogin from "./Components/FindMentorWithoutLogin";
 function App() {
   return (
     <>
@@ -24,6 +25,12 @@ function App() {
         <Route exact path="/schedule" component={Schedule} />
         <Route exact path="/home" component={Landingpage} />
         <Route exact path="/chatbox" component={Chatbox} />
+        <Route exact path="/findlogin" component={FindMentorLogin} />
+        <Route
+          exact
+          path="/findwithoutlogin"
+          component={FindMentorWithoutLogin}
+        />
       </Switch>
     </>
   );

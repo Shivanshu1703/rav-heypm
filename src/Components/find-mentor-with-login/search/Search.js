@@ -1,50 +1,51 @@
-import React from 'react'
-import { useState } from 'react'
-import './search.css'
-import { peoplee } from './peoplee'
+import React from "react";
+import { useState } from "react";
+import "./search.css";
+import { peoplee } from "./peoplee";
 function Search() {
-  const [people, setPeople] = useState(peoplee)
+  const [people, setPeople] = useState(peoplee);
   const peopleSearched = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     var newPeople = peoplee.filter((value) =>
       value.expertise.toLowerCase().includes(e.target.value)
-    )
-    console.log(newPeople)
-    setPeople(newPeople)
-  }
+    );
+    console.log(newPeople);
+    setPeople(newPeople);
+  };
   return (
     <>
-      <div className='search'>
-        <div className='find'>
+      <div className="searchfind">
+        <div className="findfind">
           <span>Find Mentor's</span>
         </div>
-        <div className='input'>
+        find
+        <div className="inputfind">
           <input
-            class='input-t'
+            class="input-tfind"
             onChange={(e) => peopleSearched(e)}
-            type='text'
-            placeholder='Design'
+            type="text"
+            placeholder="Design"
           />
         </div>
         <div>
-          <button className='button'>Filter by expertise</button>
+          <button className="buttonfind">Filter by expertise</button>
         </div>
       </div>
-      <div className='people-box'>
+      <div className="people-boxfind">
         {people.map((value, i) => {
           return (
-            <div className='people' key={i}>
-              <img src={value.image} alt='' />
-              <div className='details'>
+            <div className="peoplefind" key={i}>
+              <img src={value.image} alt="" />
+              <div className="detailsfind">
                 <h5>{value.name}</h5>
                 <h5>{value.location}</h5>
                 <span>{value.expertise}</span>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </>
-  )
+  );
 }
-export default Search
+export default Search;
