@@ -1,0 +1,84 @@
+.search {
+  display: flex;
+  width: 80%;
+}
+.find {
+  font-size: 36px;
+  line-height: 43.88px;
+  font-weight: 700;
+  font-style: normal;
+  width: 260px;
+  height: 44px;
+  color: #494554;
+  margin-left: 250px;
+  white-space: nowrap;
+}
+.input {
+  margin-left: 200px;
+  margin-right: 10px;
+}
+.input-t {
+  width: 382px;
+  height: 48px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.button {
+  background-color: #0126a8;
+  color: #ffffff;
+  padding: 10px 10px;
+  width: 223px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.searched {
+  background-color: white;
+  position: absolute;
+  width: 97%;
+  margin: 0px -10px;
+  border: solid 1px black;
+  border-top: none;
+  padding: 10px;
+  z-index: 5;
+}
+.searched div {
+  padding: 10px 0px;
+  border-bottom: solid 1px black;
+  width: 100%;
+}
+
+.people-box {
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 170px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.details {
+  position: relative;
+  top: -80px;
+  left: 25px;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.details a:link,
+:visited {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.people {
+  border: black;
+  margin-right: 20px;
+}
+.people img {
+  width: 245px;
+  height: 300px;
+  border-radius: 20px;
+}

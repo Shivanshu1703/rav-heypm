@@ -1,0 +1,19 @@
+.foot {
+  /* padding: 20px; */
+  background-color: #494554;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  color: white;
+  text-align: right;
+  left: 0;
+  cursor: pointer;
+}
+.he {
+  margin-right: 260px;
+}
+.foot div {
+  width: 100%;
+  padding: 20px 0px;
+}
