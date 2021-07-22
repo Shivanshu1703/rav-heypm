@@ -1,37 +1,39 @@
-import React  from "react";
+import React from "react";
 import "./Bottombox.css";
-import { Link ,useHistory } from "react-router-dom"
-import {auth,provider} from "../../../firebase"
-
+import { Link, useHistory } from "react-router-dom";
+import { auth, provider } from "../../../firebase";
 
 function Bottombox() {
-   const history=useHistory()
+  const history = useHistory();
 
   const signUp = () => {
-        
-     auth.signInWithPopup(provider)
-    .then((result) => {
-       if(result) 
-        history.push("/profilepage")
-       else alert(result.user)  
-    } )
-    .catch((error) => alert(error.message));
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        if (result) history.push("/profilepage");
+        else alert(result.user);
+      })
+      .catch((error) => alert(error.message));
   };
-   
-  
-
- 
 
   return (
     <div>
-      <div className="b1"> 
+      <div className="b1">
         <div>
-          <button className="button" style={{ cursor: "pointer" }} onClick={signUp} >
+          <button
+            className="button"
+            style={{ cursor: "pointer" }}
+            onClick={signUp}
+          >
             <span className="l1">Sign me up as Mentee</span>
           </button>
         </div>
         <div>
-          <button className="button1" style={{ cursor: "pointer" }} onClick={signUp} >
+          <button
+            className="button1"
+            style={{ cursor: "pointer" }}
+            onClick={signUp}
+          >
             <span className="l2">Sign me up as Mentor</span>
           </button>
         </div>

@@ -117,7 +117,7 @@ function Input() {
           <div>
             <p className="innerheading">Confirm Password</p>
             <input
-              type="Confirm Password"
+              type="Password"
               className="input-box"
               placeholder="Confirm Password"
               // hidden="true"

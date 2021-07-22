@@ -8,23 +8,22 @@ import Mentorpage from "./Components/mentorsetup/mentorpage";
 import Chat from "./Components/Chat";
 import Schedule from "./Components/Schedule";
 import Landingpage from "./Components/Landingpage/Landingpage";
+import Chatbox from "./Components/Chatbox";
 import "./App.css";
 
 function App() {
-
- return (
+  return (
     <>
       <Switch>
-
-        <Route exact path="/signup" component={SignUp}  />
-        <Route exact path="/login" component={Login}   />
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/profilepage" component={Profilepage} />
         <Route exact path="/menteepage" component={Menteepage} />
         <Route exact path="/mentorpage" component={Mentorpage} />
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/schedule" component={Schedule} />
         <Route exact path="/home" component={Landingpage} />
-
+        <Route exact path="/chatbox" component={Chatbox} />
       </Switch>
     </>
   );
