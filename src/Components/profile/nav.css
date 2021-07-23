@@ -23,6 +23,8 @@
   justify-content: space-between;
   padding-left: 110px;
   padding-right: 110px;
+  background: #ffffff;
+  /* position: fixed; */
 }
 .gridImage {
   /* margin-top: auto; */

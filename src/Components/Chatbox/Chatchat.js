@@ -29,8 +29,9 @@ function Chatchat() {
   return (
     <div className="chatboxbox">
       {/* <SignOut /> */}
-      <div>
+      <div style={{ top: "0px" }}>
         <Nav />
+        {/* <div className="line2"></div> */}
       </div>
 
       <div
@@ -38,7 +39,8 @@ function Chatchat() {
         style={{
           background: `url('${process.env.PUBLIC_URL}/Chatbox.png')`,
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "70% 35%",
+          backgroundPosition: "65% 50%",
+          backgroundAttachment: "fixed",
         }}
       >
         <div className="midchatboxboxleft">
