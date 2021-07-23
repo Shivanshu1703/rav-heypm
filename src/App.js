@@ -13,8 +13,10 @@ import "./App.css";
 import FindMentorLogin from "./Components/FindMentorLogin";
 import FindMentorWithoutLogin from "./Components/FindMentorWithoutLogin";
 function App() {
-  return (
-    <>
+
+
+return (
+     <>
       <Switch>
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
@@ -26,11 +28,7 @@ function App() {
         <Route exact path="/home" component={Landingpage} />
         <Route exact path="/chatbox" component={Chatbox} />
         <Route exact path="/findlogin" component={FindMentorLogin} />
-        <Route
-          exact
-          path="/findwithoutlogin"
-          component={FindMentorWithoutLogin}
-        />
+        <Route exact path="/findwithoutlogin" component={FindMentorWithoutLogin} />
       </Switch>
     </>
   );

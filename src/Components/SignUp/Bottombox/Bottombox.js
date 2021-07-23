@@ -1,17 +1,16 @@
 import React, { useState }  from "react";
 import "./Bottombox.css";
 import { Link, useHistory } from "react-router-dom";
-import { auth} from "../../../firebase";
+import { auth ,db} from "../../../firebase";
 
 
 function Bottombox() {
+
   const history = useHistory();
    
   //authentication
     
-  const clickAsmentee=(e)=>{
-
-    console.log(props.email,props.password)
+  const clickAsmentee=  (e)=>{
     e.preventDefault()
 
     if(props.name==="")
@@ -31,25 +30,31 @@ function Bottombox() {
      return alert("Confirmpassword did not match") 
     
    
-    auth.createUserWithEmailAndPassword(props.email, props.password)
-   .then((userCredential) => {
-    if(userCredential)
-      history.push("/menteepage")
-    else  alert(userCredential.user) 
-    var user = userCredential.user;
-    // ...
-   // sendEmail(name,email)
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert(errorMessage ,errorCode )
-  });
+     auth.createUserWithEmailAndPassword(props.email, props.password)
+     .then((userCredential) => {
+      db.collection("users").doc(userCredential.user.uid).set({
+        // uid  : userCredential.uid,
+        email: props.email,
+        name : props.name,
+        createdAt :new Date()
+       })  
+      if(userCredential)
+          history.push("/menteepage")
+      else  alert(userCredential.user) 
+      var user = userCredential.user;
+      // ...
+     
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage ,errorCode )
+    });
   }
 
   const clickAsmentor=(e)=>{
 
-    console.log(props.email,props.password)
+    //console.log(props.email,props.password)
     e.preventDefault()
 
     if(props.name==="")
@@ -71,12 +76,18 @@ function Bottombox() {
    
     auth.createUserWithEmailAndPassword(props.email, props.password)
    .then((userCredential) => {
+    db.collection("users").doc(userCredential.user.uid).set({
+      // uid  : userCredential.uid,
+      email: props.email,
+      name : props.name,
+      createdAt :new Date()
+     })  
     if(userCredential)
         history.push("/mentorpage")
     else  alert(userCredential.user) 
     var user = userCredential.user;
     // ...
-   // sendEmail(name,email)
+   
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -84,9 +95,10 @@ function Bottombox() {
     alert(errorMessage ,errorCode )
   });
   }
-
+  
   return (
-    <div>
+
+   <div>
       <div className="b1">
         <div>
           <button className="button" style={{ cursor: "pointer" }} onClick={clickAsmentee} >

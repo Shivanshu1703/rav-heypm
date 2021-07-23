@@ -3,11 +3,13 @@ import Bio from "./bio";
 import Reviews from "./reviews";
 import img1 from "./images/profilepic.png";
 import "./profilepic.css";
+import {auth} from "../../firebase"
 class Profilepic extends React.Component {
   constructor() {
     super();
     this.state = {
       showBio: true,
+      user: auth.currentUser
     };
     this.toggleShowBio = this.toggleShowBio.bind(this);
   }
@@ -16,6 +18,11 @@ class Profilepic extends React.Component {
     this.setState({ showBio: !this.state.showBio });
   }
 
+  
+   if(user){
+    var email= this.state.user.email ;
+  }
+   
   render() {
     return (
       <>

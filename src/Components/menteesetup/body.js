@@ -1,32 +1,50 @@
-import React, { useState } from "react";
-import "./body.css";
-import { db } from "../../firebase";
+import React, {useState}from 'react'
+import "./body.css"
+import {db,auth} from "../../firebase"
 import { useHistory } from 'react-router'
 
 export default function Body() {
-  // const [latqual, setLatqual] = useState("");
-  const [currentcompany, setCurrentcompany] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [pastcompany, setPastcompany] = useState("");
-  const [linkurl, setLinkurl] = useState("");
-  // const [textabout, setTextabout]=usestate("")
-  const [uploadphoto, setUploadphoto] = useState("");
-  const history=useHistory() 
 
-  const handler = () => {
-    const data = {
-      uploadphoto: uploadphoto,
-      // latqual: latqual,
-      currentcompany: currentcompany,
-      designation: designation,
-      pastcompany: pastcompany,
-      linkurl: linkurl,
-      // textabout       :  textabout,
-    };
-    db.collection("mentee").add(data);
-    console.log(data);
+  const [qualification,setQualification]=useState("")
+  const [currentcompany,setCurrentcompany]=useState("")
+  const [designation,setDesignation]=useState("")
+  const [pastcompany,setPastcompany]=useState("")
+  const [linkurl,setLinkurl]=useState("")
+  const [textabout, setTextabout]=useState("")
+  const [uploadphoto,setUploadphoto] =useState(null)
+  const [name ,setName]=useState("")
+  const [email,setEmail]=useState("")
+  const history=useHistory()
+
+  const user=auth.currentUser
+  if(user){
+    db.collection("users").doc(user.uid).get()
+    .then(doc => {
+       setName(doc.data().name)
+       setEmail(doc.data().email)
+      console.log(name,email)
+    })
+  }
+
+ 
+
+  const handler =()=>{
+    const data={
+      name            :  name,
+      email           :  email,
+      uploadphoto     :  uploadphoto.name,
+      qualification   :  qualification,
+      currentcompany  :  currentcompany,
+      designation     :  designation, 
+      pastcompany     :  pastcompany, 
+      linkurl         :  linkurl,
+      textabout       :  textabout, 
+      role            : "mentee"
+   }
+    db.collection("users").doc(user.uid).set(data)
+    console.log(uploadphoto.name)
     history.push("/profilepage")
-  };
+ }
 
 
   return (
@@ -36,7 +54,7 @@ export default function Body() {
           <div className="row1mentee">
             <div className="headingmentee">
               <p className="textmentee">
-                Hey <span className="jeanmentee">Jean,</span> let us get you
+                Hey <span className="jeanmentee">{name},</span> let us get you
                 ready!
               </p>
             </div>
@@ -64,7 +82,7 @@ export default function Body() {
                   placeholder="Choose a file to upload"
                   accept="image"
                   // style="display:none"
-                  onChange={(e) => setUploadphoto(e.target.vaue)}
+                  onChange={(e)=>setUploadphoto(e.target.files[0])}
                 />
               </div>
 
@@ -74,7 +92,7 @@ export default function Body() {
                   className="inputfieldmentee"
                   type="text"
                   placeholder="Ex: MBA from IIMB"
-                  onChange={(e) => setLatqual(e.target.vaue)}
+                  onChange={(e)=>setQualification(e.target.value)}
                 />
               </div>
 
@@ -88,22 +106,6 @@ export default function Body() {
                   onChange={(e) => setCurrentcompany(e.target.value)}
                 />
               </div>
-
-                    <div className="uploadphoto">
-                      <label className="label">Upload Photo</label>
-                        <input className="inputfield" type="file" placeholder="Choose a file to upload"
-                        accept="image"
-                        onChange={(e)=>setUploadphoto(e.target.vaue) }
-                        />
-                      </div>
-                       
-                       <div className="qualification">
-                       <label className="label">Latest Qualifiaction</label>
-                       <input className="inputfield" type="text" placeholder="Ex: MBA from IIMB"
-                        // onChange={(e)=>setLatqual(e.target.vaue) }
-                        />
-                       </div> 
-
 
               <div className="designationmentee">
                 <label className="labelmentee">Designation</label>
@@ -133,7 +135,19 @@ export default function Body() {
                   placeholder="Paste your profile url here"
                   onChange={(e) => setLinkurl(e.target.value)}
                 />
-              </div>
+             </div>
+
+                <div className="about">
+                   <label className="label">About</label>
+                      <textarea className="textarea" row="5" column="10"
+                         onChange={(e)=> setTextabout(e.target.value)}
+                       > 
+                      </textarea>
+                </div>
+                 </div>
+                 <div className="image">
+                   <img className="vector" src={process.env.PUBLIC_URL+"/Vector.png"} />
+                 </div>
 
               <div className="aboutmentee">
                 <div
@@ -151,7 +165,7 @@ export default function Body() {
                   row="5"
                   column="10"
                   placeholder="Tell us a bit about yourself!"
-                  // onChange={(e)=> setTextabout(e.target.value)}
+                  onChange={(e)=> setTextabout(e.target.value)}
                 ></textarea>
               </div>
             </div>
@@ -161,7 +175,7 @@ export default function Body() {
                 src={process.env.PUBLIC_URL + "/Vector.png"}
               />
             </div> */}
-          </div>
+          
 
           <div className="row3mentee">
             <div className="creatementee">
@@ -171,11 +185,14 @@ export default function Body() {
             </div>
 
             <div className="cancelmentee">
-              <button id="button2mentee">Cancel </button>
+              <button id="button2mentee" onClick={()=> history.push("/home")} >Cancel </button>
             </div>
           </div>
         </container>
       </div>
     </>
-  );
+
+
+    )
+
 }
