@@ -3,6 +3,7 @@ import Faq from "react-faq-component";
 import Footer from "../profile/footer";
 import Footerdown from "../profile/footerdown";
 import "./Landingpage.css";
+import { useHistory } from "react-router-dom";
 const data = {
   rows: [
     {
@@ -33,7 +34,9 @@ const data = {
   ],
 };
 function Landingpage() {
+  const history=useHistory()
   return (
+    
     <div>
       <div id="Landing_page_nav">
         <div id="Images">
@@ -42,8 +45,8 @@ function Landingpage() {
         </div>
         <div id="Nav_text">Find Mentor</div>
         <div id="Landing_page_login">
-          <button id="LandLogin">Login</button>
-          <button id="LandSignup">Signup</button>
+          <button id="LandLogin" onClick={()=> history.push("/login")}>Login</button>
+          <button id="LandSignup" onClick={()=> alert("/signup")}>Signup</button>
         </div>
       </div>
       <div id="Landing_mid1">
