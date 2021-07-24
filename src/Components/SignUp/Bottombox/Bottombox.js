@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { auth ,db} from "../../../firebase";
 
 
-function Bottombox() {
+function Bottombox(props) {
 
   const history = useHistory();
    

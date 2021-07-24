@@ -17,9 +17,15 @@ export default function Bio() {
        if(doc.data().role === "mentor"){
           setDomain(doc.data().domain)
           setIndustry(doc.data().industry)
+          setAbout(doc.data().textabout)
+          setTools(doc.data().skill)
           console.log(domain,industry)}
-        else setAbout(doc.data().textabout)  
-     })
+        else {
+           setAbout(doc.data().textabout) 
+          //  setDomain(doc.data().domain)
+           setIndustry(doc.data().pastcompany ) 
+        }
+    })
   }
  
 
