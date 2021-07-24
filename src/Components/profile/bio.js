@@ -1,13 +1,30 @@
 import React, { useState } from "react";
 import "./bio.css";
+import {db,auth} from "../../firebase"
 
 export default function Bio() {
-  const [domain, setDomain] = useState("Design");
-  const [industry, setIndustry] = useState("Information Technology");
+  const [domain, setDomain] = useState("");
+  const [industry, setIndustry] = useState("");
   const [about, setAbout] = useState(
     "Hi, I'm Jean. I've got over 10 years of experience in some sort of design. I started off in the world of editorial as a graphicdesigner and art director and now lead a fast growing team of product designers in Copenhagen.I tend to take the same approach to mentoring, as I do to design; ask lots of questions, and work together to find a solution. ✨"
   );
   const [tools, setTools] = useState("Figma");
+  const user= auth.currentUser
+  
+  if(user){
+     db.collection("users").doc(user.uid).get()
+     .then(doc => {
+       if(doc.data().role === "mentor"){
+          setDomain(doc.data().domain)
+          setIndustry(doc.data().industry)
+          console.log(domain,industry)}
+        else setAbout(doc.data().textabout)  
+     })
+  }
+ 
+
+  
+   console.log(domain,industry)
   return (
     <>
       <div className="centre2">
@@ -43,46 +60,6 @@ export default function Bio() {
         <div className="AboutP">{tools}</div>
       </div>
     </>
-    //   return (
-    //     <>
-    //       <div className="centre2">
-    //         <h className="heading">About</h>
-    //         <br></br>
-    //         <textarea
-    //           className="line"
-    //           name="aboutreview"
-    //           rows="4"
-    //           cols="50"
-    //         ></textarea>
-    //         <br></br>
-    //         <textarea
-    //           className="line"
-    //           name="aboutreview"
-    //           rows="4"
-    //           cols="50"
-    //         ></textarea>{" "}
-    //         <br></br>
-    //         <hr className="line" />
-    //         <br></br>
-    //         <h className="heading">Industry</h>
-    //         <p>Information Technology</p>
-    //         <br></br>
-    //         <hr className="line" />
-    //         <br></br>
-    //         <h className="heading">Domain</h>
-    //         <p id="design">Design</p>
-    //         <br></br>
-    //         <button className="designbutton">Ux Design</button>
-    //         <button className="designbutton">Product Design</button>
-    //         <br></br>
-    //         <hr className="line" />
-    //         <br></br>
-    //         <h className="heading">Tools</h>
-    //         <br></br>
-    //         <p>Figma</p> <br></br>
-    //         <p>Useberry</p>
-    //         <br></br>
-    //       </div>
-    //     </>
+  
   );
 }

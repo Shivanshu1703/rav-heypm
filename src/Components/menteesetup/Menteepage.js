@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Menteenav from "./menteenav";
 import Menteefooter from "./menteefooter";
@@ -20,4 +21,32 @@ export default function Menteepage() {
       </div>
     </>
   );
+=======
+import React,{useState,useEffect} from 'react'
+import Menteenav from './menteenav'
+import Menteefooter from './menteefooter'
+import Body from './body'
+import {auth}  from  "../../firebase"
+
+export default function Menteepage() {
+
+  const [user,setUser] =useState(null)
+
+  useEffect(() => {
+     auth.onAuthStateChanged( user => {
+       if(user) setUser(user)
+       else setUser(null)
+     })
+  }, []) 
+
+    return (
+      <>  
+        <div className="menteepage">
+        <Menteenav/>
+        <Body user={user}/>
+        <Menteefooter/>
+        </div>
+      </>  
+    )
+>>>>>>> 001a062 (temp)
 }
