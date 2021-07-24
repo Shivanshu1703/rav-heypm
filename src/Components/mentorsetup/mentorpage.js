@@ -20,7 +20,13 @@ export default function Mentorpage() {
 
     return (
         <>
-        <div className="menteepage">
+         <div
+        className="menteepage"
+        style={{
+          background: `url('${process.env.PUBLIC_URL}/Vector.png')`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "100% 63%",
+        }}>
         <Menteenav/>
         <Body1 user={user}/>
         <Menteefooter/>

@@ -1,8 +1,140 @@
-.next{
-    margin-left: 600px;
- }
+.textmentor {
+    color: black;
+    font-family: Lato;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  .jeanmentor {
+    color: blue;
+  }
+  input[type="file"] {
+    color: transparent;
+  }
+  .containermentor {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    height: 900px;
+  }
+  
+  .row1mentor {
+    display: flex;
+    flex-direction: row;
+    height: 88px;
+    margin-left: 185px;
+  }
+  .row2mentor {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 170px;
+  }
+  
+  .row3mentor {
+    display: flex;
+    flex-direction: row;
+    margin-top: 55px;
+  }
+  
+  .inputfieldmentor {
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 418px;
+    height: 46px;
+    padding-left: 22px;
+    background: rgba(1, 38, 168, 0.05);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: none;
+  }
+  .ellipse1mentor {
+    margin-left: 800px;
+    margin-bottom: 50px;
+  }
+  
+  .ellipse2mentor {
+    margin-left: 120px;
+  }
+  
+  .vectormentor {
+    margin-left: 500px;
+  }
+  
+  .inputboxmentor {
+    margin-left: 180px;
+  }
+  
+  .qualificationmentor {
+    margin-top: 40px;
+  }
+  
+  .companymentor {
+    margin-top: 40px;
+  }
+  
+  .designationmentor {
+    margin-top: 40px;
+  }
+  .pastcompmentor {
+    margin-top: 40px;
+  }
+  
+  .linkurlmentor {
+    margin-top: 40px;
+  }
+  
+  .aboutmentor {
+    display: flex;
+    flex-direction: row;
+    
+  }
 
- #button{
+  .rowtext{
+    margin-top: 55px;  
+  }
+
+  .uploadphotomentor{
+    margin-top: 40px;
+  }
+  
+  .textareamentor {
+    height: 60px;
+    width: 100%;
+    background: rgba(1, 38, 168, 0.05);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 10px;
+    resize: none;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 22px;
+    outline: none;
+  }
+  
+  .creatementor {
+    margin-left: 550px;
+  }
+  .cancelmentor {
+    margin-left: 20px;
+  }
+  
+  #button1mentor {
     font-family: Lato;
     font-size: 18px;
     font-style: normal;
@@ -10,8 +142,49 @@
     line-height: 24px;
     letter-spacing: 0em;
     text-align: left;
-    border-radius:10px ;
+    border-radius: 10px;
     padding: 13px 24px 13px 24px;
-    color:white;
-    background-color: blue;
-}
+    color: white;
+    background-color: blue; 
+  }
+  #button2mentor {
+ 
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 13px 24px 13px 24px;
+  }
+  .labelmentor {
+    width: 200px;
+    display: inline-block;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  
+  .info{
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+  }
+  
+   
+  
+  
+  
+  
