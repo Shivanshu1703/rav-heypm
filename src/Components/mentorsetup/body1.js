@@ -40,7 +40,8 @@ export default function Body1() {
       linkurl    : linkurl,
       uploadphoto: uploadphoto.name,
       location   : location,
-      role       : "mentor"
+      role       : "mentor",
+      uid        : user.uid
     }
     db.collection('users').doc(user.uid).set(data)
     history.push("/profilepage")
