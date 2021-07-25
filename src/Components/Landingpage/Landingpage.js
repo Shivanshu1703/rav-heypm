@@ -8,29 +8,27 @@ const data = {
   rows: [
     {
       title: "1. How is rav different from other platforms on the online?",
-      content: "Lorem ipsum dolor sit amet, consectetur ",
+      content: "Rav heps to connect mentees with the right mentors based on their experience,domain and industry. It also helps resolve queries in the least possible time. ",
     },
     {
       title:
         "2.  Are there any memborship fees/ subsciption charges for joining?",
       content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.",
+        "All the services in the platform are available for free of cost.",
     },
     {
       title: "3.  How introductions happen in Rav?",
       content:
-        "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc",
+        "The mentee can choose to connect with the right mentor by filling a small questionaire suggesting their interest.",
     },
     {
       title: "4.  Which members which i will get introduced to?",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit animi, officiis incidunt asperiores,esse est cumque quas modi, ut dolores voluptatibus natus voluptatum! Ab ad quo numquam, earum corporis cum reprehenderit, delectus harum necessitatibus similique vero culpa quidem maxime esse illo expedita eum nam et?",
-    },
+        "All the best industry leaders who are experts in their domains."},
     {
       title: "5.  What kind of business goals does the Rav helps me with?",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit animi, officiis incidunt asperiores,esse est cumque quas modi, ut dolores voluptatibus natus voluptatum! Ab ad quo numquam, earum corporis cum reprehenderit, delectus harum necessitatibus similique vero culpa quidem maxime esse illo expedita eum nam et?",
-    },
+        "You can get the best guidances from the mentors for highly specific strategic and tactical advices."},
   ],
 };
 function Landingpage() {
