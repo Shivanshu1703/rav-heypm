@@ -46,13 +46,13 @@ export default function Body1() {
     db.collection('users').doc(user.uid).set(data)
     history.push("/profilepage")
     
-    //mail verification
-    // user.sendEmailVerification()
-    // .then((result) =>{
-    //  alert("mail sent successfully") 
-    // }).catch(error =>{
-    //   alert(error.message)
-    // })
+    // mail verification
+    user.sendEmailVerification()
+    .then((result) =>{
+     alert("mail sent successfully") 
+    }).catch(error =>{
+      alert(error.message)
+    })
  }
 
  return (

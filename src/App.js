@@ -12,6 +12,7 @@ import Chatbox from "./Components/Chatbox";
 import "./App.css";
 import FindMentorLogin from "./Components/FindMentorLogin";
 import FindMentorWithoutLogin from "./Components/FindMentorWithoutLogin";
+import landingpage_withlogin from "./Components/Landingpage/Landingpagewithlogin"
 function App() {
 
 
@@ -29,6 +30,7 @@ return (
         <Route exact path="/chatbox" component={Chatbox} />
         <Route exact path="/findlogin" component={FindMentorLogin} />
         <Route exact path="/findwithoutlogin" component={FindMentorWithoutLogin} />
+        <Route exact path="/landingpage_withlogin" component={landingpage_withlogin} />
       </Switch>
     </>
   );
