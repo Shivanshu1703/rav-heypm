@@ -6,7 +6,18 @@ import "./nav.css";
 import { Icon, InlineIcon } from "@iconify/react";
 import hamburgerButton from "@iconify-icons/icon-park-outline/hamburger-button";
 import triangleDown from "@iconify-icons/zmdi/triangle-down";
+import { useHistory } from "react-router";
+import {auth} from  "../../firebase"
+
+
 export default function Nav() {
+  const history=useHistory()
+
+  const logout= ()=>{
+    auth.signOut()
+    history.push("/home")
+  }
+
   return (
     <>
       <div className="headernavprofile">
@@ -20,13 +31,13 @@ export default function Nav() {
             />
           </div>
           <div>
-            <span className="ravimg1">Rav</span>
+            <span className="ravimg1" onClick={()=>{history.push("/home") }}  >Rav</span>
           </div>
         </div>
         <div className="Rightheader">
           <div className="Righthhome">
             <nav className="home1">
-              <a href="#">HOME</a>
+              <a href="#" onClick={()=>{history.push("/home") }} >HOME</a>
             </nav>
           </div>
           <div className="Righthgrid">
@@ -45,9 +56,9 @@ export default function Nav() {
                   />
                 </button>
                 <div class="dropdowncontent">
-                  <a href="#">My Profile</a>
-                  <a href="#">Chats</a>
-                  <a href="#">Logout</a>
+                  <a href="" onClick={()=>{history.push("/profilepage") }} >My Profile</a>
+                  <a href="" onClick={()=>{history.push("/chat") }} >Chats</a>
+                  <a href="" onClick={logout} >Logout</a>
                 </div>
               </div>
             </div>
