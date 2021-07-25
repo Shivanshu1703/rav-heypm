@@ -27,7 +27,7 @@ export default function Navbar() {
             <div className="grid">
               <div className="gridImage">
                 <img src={profilepic} alt="" />
-              </div>
+              </div>￼
               <button className="profilebutton">
                 <Icon
                   icon={hamburgerButton}
