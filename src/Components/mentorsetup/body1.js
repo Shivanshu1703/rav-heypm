@@ -1,7 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import "./body1.css"
-import {db,auth} from "../../firebase"
+import {db,auth,firebase,} from "../../firebase"
 import { useHistory } from 'react-router'
+
+
+
+
 
 export default function Body1() {
   const [name ,setName]=useState("")
@@ -10,12 +14,13 @@ export default function Body1() {
   const [location,setLocation]=useState("")
   const [domain,setDomain]=useState("")
   const [industry,setIndustry]=useState("")
-  const [uploadphoto,setUploadphoto]=useState("")
+  const [company,setCompany]=useState("")
   const [textabout,setTextabout] = useState("")
   const [recognition ,setRecognition] = useState("")
   const [linkurl,setLinkurl] =useState("")
   const history=useHistory()
-
+  const [file,setFile]=useState(null) 
+  const [imageUrl ,setImageUrl] =useState(null)
 
   const user=auth.currentUser
   if(user){
@@ -23,12 +28,45 @@ export default function Body1() {
     .then(doc => {
        setName(doc.data().name)
        setEmail(doc.data().email)
-      console.log(name,email)
+      // console.log(name,email)
     })
   }
   // else history.push("/home")
 
-  const handler =()=>{
+ //upload and download image from firestorage
+  const handleSave=async ()=>{
+    let storageRef= firebase.storage().ref()
+    let fileRef=storageRef.child(file.name)
+    await  fileRef.put(file)  
+    setImageUrl(await fileRef.getDownloadURL()) 
+    console.log(imageUrl) 
+  } 
+
+   const isValidLinkedinUrl = (url) => {
+    return /(https?:\/\/(www.)|(www.))?linkedin.com\/(mwlite\/|m\/)?in\/[a-zA-Z0-9_.-]+\/?/.test(url);
+  };
+
+  const handler = async()=>{
+    if(textabout === "")
+     return alert("text cann't be empty")  
+    if(skill=== "")
+    return alert("skill is necessary")
+    if(domain === "")
+     return alert("domain is necessary")  
+    if(recognition === "")
+     return alert("designation is necessary")
+    if(industry === "")
+     return alert("industry is compulsory")   
+    if(linkurl === "")
+     return alert( "linkedin url is compulsory") 
+     const result=await isValidLinkedinUrl(linkurl) 
+    // if(!result)
+    //  return alert( "linkedin url is not valid")
+   if(company === "")
+     return alert("company is necessary")    
+     
+    const rs= await handleSave()
+
     const data={
       name       : name,
       email      : email,
@@ -38,21 +76,23 @@ export default function Body1() {
       industry   : industry,
       recognition: recognition,
       linkurl    : linkurl,
-      uploadphoto: uploadphoto.name,
+      company    : company,
       location   : location,
       role       : "mentor",
-      uid        : user.uid
+      uid        : user.uid,
+      imageUrl   : imageUrl
     }
-    db.collection('users').doc(user.uid).set(data)
-    history.push("/profilepage")
+    await db.collection('users').doc(user.uid).set(data)
+     history.push("/profilepage")
     
     //mail verification
-    // user.sendEmailVerification()
-    // .then((result) =>{
-    //  alert("mail sent successfully") 
-    // }).catch(error =>{
-    //   alert(error.message)
-    // })
+    user.sendEmailVerification()
+    .then((result) =>{
+     alert("mail sent successfully") 
+     history.push("/profilepage")
+    }).catch(error =>{
+      alert(error.message)
+    })
  }
 
  return (
@@ -80,7 +120,7 @@ export default function Body1() {
                   alignItems: "center",
                 }}
               >
-                <label className="labelmentor">About</label>
+                <label className="labelmentor">About *</label>
               </div>
               <textarea
                 className="textareamentor"
@@ -91,14 +131,22 @@ export default function Body1() {
               ></textarea>
           </div>
              
-             <div className="qualificationmentor">
+           <div className="qualificationmentor">
               <label className="labelmentor">Skill Set *</label>
               <input
-                className="inputfieldmentor"
+                  className="inputfieldmentor"
                 type="text"
                 placeholder="Leader, Collaborative..."
                 onChange={(e) => setSkill(e.target.value)}
               />
+            </div>
+            <div className="photomentor">
+              <label className="labelmentor">Upload Photo </label>
+              <input type="file" onChange={(e)=>{setFile(e.target.files[0])}  } 
+              placeholder="hiii"
+              className="inputfieldmentor"
+              accept="images/*"
+             />
             </div>
 
             <div className="companymentor">
@@ -112,11 +160,11 @@ export default function Body1() {
             </div>
 
             <div className="designationmentor">
-              <label className="labelmentor">Recognition</label>
+              <label className="labelmentor">Designation *</label>
               <input
                 className="inputfieldmentor"
                 type="text"
-                placeholder="Mention any awards you are proud of"
+                placeholder=" Ex -Director of Magic @MCU"
                 onChange={(e) => setRecognition(e.target.value)}
               />
             </div>
@@ -132,28 +180,28 @@ export default function Body1() {
             </div>
 
             <div className="linkurlmentor">
-              <label className="labelmentor">Linkedin Profile Url</label>
+              <label className="labelmentor">Linkedin Profile Url *</label>
               <input
                 className="inputfieldmentor"
-                type="text"
-                placeholder="Paste your profile url here"
+                type="url"
+                placeholder="Ex- https://www.linkedin.com/in/username"
                 onChange={(e) => setLinkurl(e.target.value)}
               />
             </div>
 
             <div className="uploadphotomentor">
-              <label className="labelmentor">Upload Photo</label>
+              <label className="labelmentor">Company *</label>
               <input
                 className="inputfieldmentor"
-                type="file"
-                placeholder="Choose a file to upload"
-                accept="image"
-                onChange={(e)=>setUploadphoto(e.target.files[0])}
+                type="text"
+                placeholder="Ex - Google"
+                
+                 onChange={(e)=>setCompany(e.target.value)}
               />
             </div>
               
             <div className="linkurlmentor">
-              <label className="labelmentor">Your city/location</label>
+              <label className="labelmentor">Your city/location </label>
               <input
                 className="inputfieldmentor"
                 type="text"

@@ -3,7 +3,10 @@ import Faq from "react-faq-component";
 import Footer from "../profile/footer";
 import Footerdown from "../profile/footerdown";
 import "./Landingpage.css";
-const data = {
+import {auth} from "../../firebase"
+import Navbar from "../profile/nav"
+
+ const data = {
   rows: [
     {
       title: "1. How is rav different from other platforms on the online?",
@@ -33,6 +36,8 @@ const data = {
   ],
 };
 function Landingpage() {
+   const user = auth.currentUser
+    console.log(user)
   return (
     <div>
       <div id="Landing_page_nav">
@@ -41,10 +46,18 @@ function Landingpage() {
           <img src={process.env.PUBLIC_URL + "/Rav.jpg"} />
         </div>
         <div id="Nav_text">Find Mentor</div>
-        <div id="Landing_page_login">
+        {user ? <Navbar/> : 
+                 < >
+                   <div id="Landing_page_login">
+                     <button id="LandLogin">Login</button>
+                     <button id="LandSignup">Signup</button>
+                   </div>
+                 </>   
+           }
+        {/* <div id="Landing_page_login">
           <button id="LandLogin">Login</button>
           <button id="LandSignup">Signup</button>
-        </div>
+        </div> */}
       </div>
       <div id="Landing_mid1">
         <div id="mid_box_alignment">
