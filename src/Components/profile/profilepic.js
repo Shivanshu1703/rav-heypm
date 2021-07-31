@@ -12,7 +12,8 @@ import { useHistory } from "react-router-dom";
    const [showBio ,setShowBio] =useState(true)
    const [name ,setName] =useState("")
    const [designation,setDesignation]=useState("")
-
+   const [image, setImage] = useState("")
+   const [imageURL,setImageURL] = useState(null)
 
    const toggleShow=()=>{
         setShowBio(!showBio) 
@@ -26,11 +27,13 @@ import { useHistory } from "react-router-dom";
        if(doc.data().role === "mentor"){
           setName(doc.data().name)
           setDesignation(doc.data().recognition)
-          // console.log(name,designation)
+          setImageURL(doc.data().imageUrl)
+          console.log(imageURL)
         }
         else {
             setName(doc.data().name)
             setDesignation(doc.data().designation)
+            setImageURL(doc.data().imageUrl)
             // console.log(name,designation)
         }
     })
@@ -42,7 +45,7 @@ import { useHistory } from "react-router-dom";
         <container className="container">
           <div className="row1">
             <div className="pic">
-              <img src={img1} alt="prifilepic" /> <br />
+              <img src={imageURL} alt="" width="144px" height="124px"  /> <br />
               <h3>{name}</h3>
               <p>{designation}</p>
             </div>

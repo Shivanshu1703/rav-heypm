@@ -5,7 +5,8 @@ function reviewCard(props) {
     <>
       <div className="reviewbox">
         <div className="imagereviewbox">
-          <img src={props.image} alt="" />
+          {/* <img src={props.image} alt="" /> */}
+           <h2>No Reviews Yet </h2>
         </div>
         <div className="contentreviewbox">
           <div className="namereviewbox">

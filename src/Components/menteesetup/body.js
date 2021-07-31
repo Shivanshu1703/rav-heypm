@@ -1,20 +1,23 @@
 import React, {useState}from 'react'
 import "./body.css"
-import {db,auth} from "../../firebase"
+import {db,auth,firebase} from "../../firebase"
 import { useHistory } from 'react-router'
 
 export default function Body() {
 
-  const [qualification,setQualification]=useState("")
+  const [skill,setSkill]=useState("")
   const [currentcompany,setCurrentcompany]=useState("")
   const [designation,setDesignation]=useState("")
-  const [pastcompany,setPastcompany]=useState("")
+  const [domain,setDomain]=useState("")
   const [linkurl,setLinkurl]=useState("")
   const [textabout, setTextabout]=useState("")
-  const [uploadphoto,setUploadphoto] =useState(null)
+  const [industry,setIndustry] =useState("")
   const [name ,setName]=useState("")
   const [email,setEmail]=useState("")
   const history=useHistory()
+  const [file,setFile]=useState(null) 
+  const [imageUrl ,setImageUrl] =useState(null)
+
 
   const user=auth.currentUser
   if(user){
@@ -26,24 +29,58 @@ export default function Body() {
     })
   }
 
- 
 
-  const handler =()=>{
+  //upload and download image from firestorage
+  const handleSave=async ()=>{
+    let storageRef= firebase.storage().ref()
+    let fileRef=storageRef.child(file.name)
+    await  fileRef.put(file)  
+    setImageUrl(await fileRef.getDownloadURL()) 
+    console.log(imageUrl) 
+  } 
+
+
+  const isValidLinkedinUrl = (url) => {
+    return /(https?:\/\/(www.)|(www.))?linkedin.com\/(mwlite\/|m\/)?in\/[a-zA-Z0-9_.-]+\/?/.test(url);
+  };
+
+  const handler =async()=>{
+    if(industry === "")
+    return alert("industry is compulsory") 
+   if(skill === "")
+    return alert("skill is necessary")
+   if(currentcompany === "")
+    return alert("company is necessary") 
+   if(designation === "")
+    return alert("designation is necessary") 
+   if(domain === "")
+    return alert("domain is necessary")     
+   if(linkurl === "")
+    return alert( "linkedin url is compulsory") 
+   const result=await isValidLinkedinUrl(linkurl) 
+    if(!result)
+      return alert( "linkedin url not is compulsory") 
+   if(textabout === "")
+    return alert("text cann't be empty")     
+ 
+    const rs= await handleSave()
+
+
     const data={
       name            :  name,
       email           :  email,
-      uploadphoto     :  uploadphoto.name,
-      qualification   :  qualification,
+      industry        :  industry,
+      skill           :  skill,
       currentcompany  :  currentcompany,
       designation     :  designation, 
-      pastcompany     :  pastcompany, 
+      domain          :  domain, 
       linkurl         :  linkurl,
       textabout       :  textabout, 
       role            : "mentee",
       uid             :  user.uid ,
+      imageUrl        : imageUrl
    }
     db.collection("users").doc(user.uid).set(data)
-    console.log(uploadphoto.name)
     history.push("/profilepage")
  }
 
@@ -65,28 +102,27 @@ export default function Body() {
         <div className="row2mentee">
           <div className="inputboxmentee">
             <div className="uploadphotomentee">
-              <label className="labelmentee">Upload Photo</label>
+              <label className="labelmentee">Industries *</label>
               <input
                 className="inputfieldmentee"
-                type="file"
-                placeholder="Choose a file to upload"
-                accept="image"
-                onChange={(e)=>setUploadphoto(e.target.files[0])}
+                type="text"
+                placeholder="Ex - FMCG, manufacturing, Oil & Gas..... "
+                 onChange={(e)=>setIndustry(e.target.value)}
               />
             </div>
 
             <div className="qualificationmentee">
-              <label className="labelmentee">Latest Qualifiaction</label>
+              <label className="labelmentee">Skill Set *</label>
               <input
                 className="inputfieldmentee"
                 type="text"
-                placeholder="Ex: MBA from IIMB"
-                onChange={(e) => setQualification(e.target.value)}
+                placeholder="Leader, Collaborative..."
+                onChange={(e) => setSkill(e.target.value)}
               />
             </div>
 
             <div className="companymentee">
-              <label className="labelmentee">Current Company</label>
+              <label className="labelmentee"> Company *</label>
               <input
                 className="inputfieldmentee"
                 type="text"
@@ -96,7 +132,7 @@ export default function Body() {
             </div>
 
             <div className="designationmentee">
-              <label className="labelmentee">Designation</label>
+              <label className="labelmentee">Designation *</label>
               <input
                 className="inputfieldmentee"
                 type="text"
@@ -106,20 +142,29 @@ export default function Body() {
             </div>
 
             <div className="pastcompmentee">
-              <label className="labelmentee">Add past companies</label>
+              <label className="labelmentee">Domain *</label>
               <input
                 className="inputfieldmentee"
                 type="text"
-                placeholder="Ex: Ex-Flipkart, Ex-Myntra "
-                onChange={(e) => setPastcompany(e.target.value)}
+                placeholder="Ex: Sales, marketing, product, operatiosn "
+                onChange={(e) => setDomain(e.target.value)}
               />
             </div>
 
+            <div className="photomentee">
+              <label className="labelmentee">Upload Photo </label>
+              <input type="file" onChange={(e)=>{setFile(e.target.files[0])}  } 
+              placeholder="hiii"
+              className="inputfieldmentee"
+              accept="images/*"
+             />
+            </div>
+
             <div className="linkurlmentee">
-              <label className="labelmentee">Linkedin Profile Url</label>
+              <label className="labelmentee">Linkedin Profile Url *</label>
               <input
                 className="inputfieldmentee"
-                type="text"
+                type="url"
                 placeholder="Paste your profile url here"
                 onChange={(e) => setLinkurl(e.target.value)}
               />
@@ -134,7 +179,7 @@ export default function Body() {
                   alignItems: "center",
                 }}
               >
-                <label className="labelmentee">About</label>
+                <label className="labelmentee">About *</label>
               </div>
               <textarea
                 className="textareamentee"
