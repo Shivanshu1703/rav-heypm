@@ -46,13 +46,13 @@ export default function Nav() {
             />
           </div>
           <div>
-            <span className="ravimg1" onClick={()=>{history.push("/home") }}  >Rav</span>
+            <span className="ravimg1" onClick={()=>{history.push("/landingpage_withlogin") }}  >Rav</span>
           </div>
         </div>
         <div className="Rightheader">
           <div className="Righthhome">
             <nav className="home1">
-              <a href="#" onClick={()=>{history.push("/home") }} >HOME</a>
+              <a href="#" onClick={()=>{history.push("/landingpage_withlogin") }} >HOME</a>
             </nav>
           </div>
           <div className="Righthgrid">
