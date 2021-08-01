@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Search.css";
-import { peoplee } from "./peoplee";
+import { auth, db } from "../../../firebase";
+// import { peoplee } from "./peoplee";
 import { UseSearchUtility } from "./Utils";
 function Search() {
+  const [peoplee, setPeoplee] = useState([]);
+  const user = auth.currentUser;
+  useEffect(() => {
+    db.collection("users")
+      .where("role", "==", "mentor")
+      // .get()
+      .onSnapshot((snapshot) => {
+        setPeoplee(snapshot.docs.map((doc) => doc.data()));
+      });
+  }, []);
+  console.log(peoplee);
+
   const [people, setPeople] = useState(peoplee);
   const [searchText, setSearchText] = useState({
     name: "",
     location: "",
-    expertise: "",
+    skill: "",
   });
-  const [Names, setNames] = useState([]);
-  const [Locations, setLocations] = useState([]);
-  const [Expertises, setExpertise] = useState([]);
+  const [Name, setName] = useState([]);
+  const [Location, setLocation] = useState([]);
+  const [Skill, setSkill] = useState([]);
 
   const peopleNames = (e) => {
     const targetValue = e.target.value.toLowerCase();
@@ -19,7 +32,7 @@ function Search() {
     const newNames = peoplee.filter((value) => {
       if (value.name.toLowerCase().includes(targetValue)) return value.name;
     });
-    setNames(Array.from(new Set(newNames)));
+    setName(Array.from(new Set(newNames)));
 
     console.log(targetValue);
   };
@@ -30,7 +43,7 @@ function Search() {
       if (value.location.toLowerCase().includes(targetValue))
         return value.location;
     });
-    setLocations(Array.from(new Set(newLocations)));
+    setLocation(Array.from(new Set(newLocations)));
     console.log(targetValue);
   };
   const peopleExpertise = (e) => {
@@ -40,7 +53,7 @@ function Search() {
       if (value.expertise.toLowerCase().includes(targetValue))
         return value.expertise;
     });
-    setExpertise(Array.from(new Set(newExpertises)));
+    setSkill(Array.from(new Set(newExpertises)));
     console.log(targetValue);
   };
 
@@ -50,17 +63,17 @@ function Search() {
     document.getElementById(e.target.dataset.id).value = e.target.innerHTML;
     if (e.target.dataset.id === "name") {
       setSearchText({ ...searchText, name: e.target.innerHTML });
-      setNames([]);
+      setName([]);
     }
     if (e.target.dataset.id === "location") {
       setSearchText({ ...searchText, location: e.target.innerHTML });
 
-      setLocations([]);
+      setLocation([]);
     }
-    if (e.target.dataset.id === "expertise") {
-      setSearchText({ ...searchText, expertise: e.target.innerHTML });
+    if (e.target.dataset.id === "skill") {
+      setSearchText({ ...searchText, skill: e.target.innerHTML });
 
-      setExpertise([]);
+      setSkill([]);
     }
   };
 
@@ -68,7 +81,7 @@ function Search() {
     const arr = [
       searchText.name.toLowerCase(),
       searchText.location.toLowerCase(),
-      searchText.expertise.toLowerCase(),
+      searchText.skill.toLowerCase(),
     ];
     setPeople(UseSearchUtility(arr, peoplee));
   };
@@ -87,9 +100,9 @@ function Search() {
               placeholder="Type 'sara' or 'Product Design'"
               id="name"
             />
-            {Names.length ? (
+            {Name.length ? (
               <div className="searchedwologin">
-                {Names.map((value, i) => (
+                {Name.map((value, i) => (
                   <div key={i} data-id="name" onClick={(e) => setValue(e)}>
                     {value.name}
                   </div>
@@ -109,9 +122,9 @@ function Search() {
               placeholder="Select Location"
               id="location"
             />
-            {Locations.length ? (
+            {Location.length ? (
               <div className="searchedwologin">
-                {Locations.map((value, i) => (
+                {Location.map((value, i) => (
                   <div key={i} data-id="location" onClick={(e) => setValue(e)}>
                     {value.location}
                   </div>
@@ -131,11 +144,11 @@ function Search() {
               placeholder="Select Expertise"
               id="expertise"
             />
-            {Expertises.length ? (
+            {Skill.length ? (
               <div className="searchedwologin">
-                {Expertises.map((value, i) => (
+                {Skill.map((value, i) => (
                   <div key={i} data-id="expertise" onClick={(e) => setValue(e)}>
-                    {value.expertise}
+                    {value.skill}
                   </div>
                 ))}
               </div>
@@ -157,7 +170,7 @@ function Search() {
           people.map((value, i) => {
             return (
               <div className="peoplewologin" key={i}>
-                <img src={value.image} alt="" />
+                <img src={value.imageUrl} alt="" />
                 <div className="detailswologin">
                   <h5>{value.name}</h5>
                   <span>
@@ -176,3 +189,23 @@ function Search() {
 }
 
 export default Search;
+
+// import React, { useState, useEffect } from "react";
+// import { auth, db } from "../../../firebase";
+
+// function Search() {
+//   const [peoplee, setPeoplee] = useState([]);
+//   const user = auth.currentUser;
+//   useEffect(() => {
+//     db.collection("users")
+//       .where("role", "==", "mentor")
+//       // .get()
+//       .onSnapshot((snapshot) => {
+//         setPeoplee(snapshot.docs.map((doc) => doc.data()));
+//       });
+//   }, []);
+//   console.log(peoplee);
+//   return <div></div>;
+// }
+
+// export default Search;
