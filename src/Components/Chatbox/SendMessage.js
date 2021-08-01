@@ -12,9 +12,10 @@ function SendMessage({ scroll }) {
     const { uid, photoURL } = auth.currentUser;
 
     await db.collection("messages").add({
+      toUid: "abcd",
       text: msg,
       photoURL,
-      uid,
+      fromUid: uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setMsg("");
