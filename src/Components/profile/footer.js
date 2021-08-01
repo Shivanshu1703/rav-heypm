@@ -30,14 +30,11 @@ export default function Footer() {
 
           <div className="getstart">
             <p id="rightup">
-              Create an account within minutes and get your <br></br>
-              queries solved.
+             Contact us at:
+             <br></br>
+             <p id="emailfont">websiterav@gmail.com</p>
             </p>
             <br></br>
-            <label id="level">
-              <input id="box" type="text" placeholder="Enter email address" />
-              <button id="button">Get Started</button>
-            </label>
           </div>
         </div>
       </div>

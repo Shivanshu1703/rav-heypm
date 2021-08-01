@@ -5,9 +5,7 @@ import {db,auth} from "../../firebase"
 export default function Bio() {
   const [domain, setDomain] = useState("");
   const [industry, setIndustry] = useState("");
-  const [about, setAbout] = useState(
-    "Hi, I'm Jean. I've got over 10 years of experience in some sort of design. I started off in the world of editorial as a graphicdesigner and art director and now lead a fast growing team of product designers in Copenhagen.I tend to take the same approach to mentoring, as I do to design; ask lots of questions, and work together to find a solution. ✨"
-  );
+  const [about, setAbout] = useState();
   const [tools, setTools] = useState("Figma");
   const user= auth.currentUser
   
@@ -22,8 +20,9 @@ export default function Bio() {
           console.log(domain,industry)}
         else {
            setAbout(doc.data().textabout) 
-          //  setDomain(doc.data().domain)
-           setIndustry(doc.data().pastcompany ) 
+           setDomain(doc.data().domain)
+           setIndustry(doc.data().industry )
+           setTools(doc.data().skill)
         }
     })
   }
@@ -44,7 +43,7 @@ export default function Bio() {
         <div className="line1"></div>
         <h className="headingp">Domain</h>
         <div className="AboutP">{domain}</div>
-        <div className="ButtonDomain">
+        {/* <div className="ButtonDomain">
           <button className="designbutton" disabled="true">
             <div className="AboutP" style={{ fontWeight: "normal" }}>
               Ux Design
@@ -60,9 +59,9 @@ export default function Bio() {
               Ux Design
             </div>
           </button>
-        </div>
+        </div> */}
         <div className="line1"></div>
-        <h className="headingp">Tools</h>
+        <h className="headingp">Skill-Set</h>
         <div className="AboutP">{tools}</div>
       </div>
     </>

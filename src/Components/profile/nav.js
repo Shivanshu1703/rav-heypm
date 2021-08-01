@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import img from "./images/Polygon.png";
 import profilepic from "./images/Ellipse.png";
 import "./nav.css";
@@ -7,16 +7,31 @@ import { Icon, InlineIcon } from "@iconify/react";
 import hamburgerButton from "@iconify-icons/icon-park-outline/hamburger-button";
 import triangleDown from "@iconify-icons/zmdi/triangle-down";
 import { useHistory } from "react-router";
-import {auth} from  "../../firebase"
+import {auth,db} from  "../../firebase"
 
 
 export default function Nav() {
   const history=useHistory()
+  const [imageURL,setImageURL] = useState(null)
+  const user=auth.currentUser
 
-  const logout= ()=>{
-    auth.signOut()
-    history.push("/home")
-  }
+  if(user){
+    db.collection("users").doc(user.uid).get()
+    .then(doc => {
+      if(doc.data().role === "mentor"){
+         setImageURL(doc.data().imageUrl)
+       }
+       else {
+           setImageURL(doc.data().imageUrl)
+       }
+   })
+ }
+
+ const logout= ()=>{
+  auth.signOut()
+  history.push("/home")
+}
+
 
   return (
     <>
@@ -43,7 +58,7 @@ export default function Nav() {
           <div className="Righthgrid">
             <div className="grid">
               <div className="gridImage">
-                <img src={profilepic} alt="" />
+                <img src={imageURL} alt="" />
               </div>
               <div className="dropdownprofile">
                 <button class className="profilebutton">

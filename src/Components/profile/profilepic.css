@@ -5,11 +5,13 @@
 }
 
 .pic {
-  /* position: absolute; */
-  /* padding-top: 0px;
-  padding-bottom: 30px; */
+  
   padding-left: 110px;
   margin-top: -62px;
+}
+
+.pic img{
+  border-radius: 20px;
 }
 .row1 {
   display: flex;
