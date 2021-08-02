@@ -35,6 +35,5 @@ export const UseSearchUtility=(arr,peoplee)=>{
        
         return null;
       })
-
-      return newPeople;
-}
+  return newPeople;
+};

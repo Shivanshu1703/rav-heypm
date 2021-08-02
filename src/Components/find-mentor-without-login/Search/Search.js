@@ -23,6 +23,7 @@ function Search() {
       });
   }, []);
 
+
   const people= peoplee;
   console.log(people);
   const [searchText, setSearchText] = useState({
@@ -94,6 +95,9 @@ function Search() {
     setPeoplee(UseSearchUtility(arr, peoplee));
     console.log(peoplee)
   };
+
+  console.log(peoplee);
+  console.log(peoplee.length);
 
   return (
     <div>
@@ -175,10 +179,11 @@ function Search() {
       </div>
       <div className="top-mentorswologin">Top Mentors</div>
       <div className="people-boxwologin">
-        {people.length ? (
-          people.map((value, i) => {
+        {peoplee.length ? (
+          peoplee.map((value, i) => {
             return (
               <div className="peoplewologin" key={i}>
+                {/* <img src={process.env.PUBLIC_URL + "/Chatbox.png"} alt="" /> */}
                 <img src={value.imageUrl} alt="" />
                 <div className="detailswologin">
                   <h5>{value.name}</h5>
@@ -200,23 +205,5 @@ function Search() {
 }
 
 export default Search;
-
-
-// export  function Search1(props) {
-//   return (
-//     <div>
-//       <Bio 
-//        name={peoplee.map((data)=>data[props.imageid].name)}
-//        industry={peoplee.map(data=>data[props.imageid].industry)}
-//        about={peoplee.map(data=>data[props.imageid].textabout)}
-//        skill={peoplee.map(data=>data[props.imageid].skill)}
-//        domain={peoplee.map(data=>data[props.imageid].domain)}
-//        image={peoplee.map(data=>data[props.imageid].imageUrl)}
-//        designation={peoplee.map(data=>data[props.imageid].recognition)}
-//       />
-//     </div>
-//   )
-// }
-
 
 
