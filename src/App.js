@@ -12,12 +12,10 @@ import Chatbox from "./Components/Chatbox";
 import "./App.css";
 import FindMentorLogin from "./Components/FindMentorLogin";
 import FindMentorWithoutLogin from "./Components/FindMentorWithoutLogin";
-import landingpage_withlogin from "./Components/Landingpage/Landingpagewithlogin"
+import landingpage_withlogin from "./Components/Landingpage/Landingpagewithlogin";
 function App() {
-
-
-return (
-     <>
+  return (
+    <div>
       <Switch>
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/login" component={Login} />
@@ -29,10 +27,18 @@ return (
         <Route exact path="/home" component={Landingpage} />
         <Route exact path="/chatbox" component={Chatbox} />
         <Route exact path="/findlogin" component={FindMentorLogin} />
-        <Route exact path="/findwithoutlogin" component={FindMentorWithoutLogin} />
-        <Route exact path="/landingpage_withlogin" component={landingpage_withlogin} />
+        <Route
+          exact
+          path="/findwithoutlogin"
+          component={FindMentorWithoutLogin}
+        />
+        <Route
+          exact
+          path="/landingpage_withlogin"
+          component={landingpage_withlogin}
+        />
       </Switch>
-    </>
+    </div>
   );
 }
 
