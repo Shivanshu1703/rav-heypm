@@ -30,9 +30,9 @@ function Search() {
     location: "",
     skill: "",
   });
-  const [Name, setName] = useState([]);
-  const [Location, setLocation] = useState([]);
-  const [Skill, setSkill] = useState([]);
+  // const [Name, setName] = useState([]);
+  // const [Location, setLocation] = useState([]);
+  // const [Skill, setSkill] = useState([]);
 
   const peopleNames = (e) => {
     const targetValue = e.target.value.toLowerCase();
