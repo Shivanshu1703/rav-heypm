@@ -26,6 +26,12 @@ export default function Bio() {
         }
     })
   }
+  // else {
+  //   setDomain(props.domain)
+  //   setIndustry(props.industry)
+  //   setAbout(props.about)
+  //   setTools(props.skill) 
+  // }
  
 
   
