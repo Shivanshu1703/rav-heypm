@@ -14,9 +14,9 @@ function Search() {
         setPeoplee(snapshot.docs.map((doc) => doc.data()));
       });
   }, []);
-  console.log(peoplee);
+  // console.log(peoplee);
 
-  const [people, setPeople] = useState(peoplee);
+  // const [people, setPeople] = useState(peoplee);
   const [searchText, setSearchText] = useState({
     name: "",
     location: "",
@@ -50,8 +50,7 @@ function Search() {
     const targetValue = e.target.value;
     setSearchText({ ...searchText, expertise: targetValue });
     const newExpertises = peoplee.filter((value) => {
-      if (value.expertise.toLowerCase().includes(targetValue))
-        return value.expertise;
+      if (value.skill.toLowerCase().includes(targetValue)) return value.skill;
     });
     setSkill(Array.from(new Set(newExpertises)));
     console.log(targetValue);
@@ -83,8 +82,11 @@ function Search() {
       searchText.location.toLowerCase(),
       searchText.skill.toLowerCase(),
     ];
-    setPeople(UseSearchUtility(arr, peoplee));
+    setPeoplee(UseSearchUtility(arr, peoplee));
   };
+
+  console.log(peoplee);
+  console.log(peoplee.length);
 
   return (
     <div>
@@ -166,10 +168,11 @@ function Search() {
       </div>
       <div className="top-mentorswologin">Top Mentors</div>
       <div className="people-boxwologin">
-        {people.length ? (
-          people.map((value, i) => {
+        {peoplee.length ? (
+          peoplee.map((value, i) => {
             return (
               <div className="peoplewologin" key={i}>
+                {/* <img src={process.env.PUBLIC_URL + "/Chatbox.png"} alt="" /> */}
                 <img src={value.imageUrl} alt="" />
                 <div className="detailswologin">
                   <h5>{value.name}</h5>
