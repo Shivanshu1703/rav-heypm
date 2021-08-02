@@ -5,7 +5,7 @@ export const UseSearchUtility=(arr,peoplee)=>{
         if(arr[1].length) flag2=1;
         if(arr[2].length) flag3=1;
         if(flag1 && flag2 && flag3){
-              if(arr[0]===value.name.toLowerCase() && arr[1]===value.location.toLowerCase() && arr[2]===value.expertise.toLowerCase())
+              if(arr[0]===value.name.toLowerCase() && arr[1]===value.location.toLowerCase() && arr[2]===value.skill.toLowerCase())
                 return value;
         }
         else if(flag1 && flag2){
@@ -13,11 +13,11 @@ export const UseSearchUtility=(arr,peoplee)=>{
                 return true
         }
         else if(flag2 && flag3){
-              if(arr[1]===value.location.toLowerCase() && arr[2]===value.expertise.toLowerCase())
+              if(arr[1]===value.location.toLowerCase() && arr[2]===value.skill.toLowerCase())
                 return true
         }
         else if(flag1 && flag3){
-              if(arr[0]===value.name.toLowerCase() && arr[2]===value.expertise.toLowerCase())
+              if(arr[0]===value.name.toLowerCase() && arr[2]===value.skill.toLowerCase())
                 return true
         }
         else if(flag1){
@@ -35,6 +35,5 @@ export const UseSearchUtility=(arr,peoplee)=>{
        
         return null;
       })
-
-      return newPeople;
-}
+  return newPeople;
+};

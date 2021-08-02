@@ -1,13 +1,12 @@
-import React, { setState ,useState } from "react";
+import React, { setState, useState } from "react";
 import Bio from "./bio";
 import Reviews from "./reviews";
 import img1 from "./images/profilepic.png";
 import "./profilepic.css";
-import {auth,db} from "../../firebase"
+import { auth, db } from "../../firebase";
 import { useHistory } from "react-router-dom";
 
-
-  function Profilepic(){ 
+function Profilepic() {
     const history=useHistory()
    const [showBio ,setShowBio] =useState(true)
    const [name ,setName] =useState("")
@@ -15,13 +14,13 @@ import { useHistory } from "react-router-dom";
    const [image, setImage] = useState("")
    const [imageURL,setImageURL] = useState(null)
 
-   const toggleShow=()=>{
-        setShowBio(!showBio) 
-   }
-    
-   const user=auth.currentUser
+  const toggleShow = () => {
+    setShowBio(!showBio);
+  };
 
-     if(user){
+  const user = auth.currentUser;
+
+ if(user){
      db.collection("users").doc(user.uid).get()
      .then(doc => {
        if(doc.data().role === "mentor"){
@@ -38,11 +37,9 @@ import { useHistory } from "react-router-dom";
         }
     })
   }
-    return (
-     
-
-      <>
-        <container className="container">
+  return (
+     <>
+      <container className="container">
           <div className="row1">
             <div className="pic">
               <img src={imageURL} alt="" width="144px" height="124px"  /> <br />
@@ -50,31 +47,29 @@ import { useHistory } from "react-router-dom";
               <p>{designation}</p>
             </div>
             <div className="col2">
-              <button id="hi" onClick={()=> history.push("/chat")}>Connect!</button>
+              <button id="hi" onClick={()=> history.push("/chatbox")}>Connect!</button>
             </div>
            </div>
 
-          <div className="col1">
-            <div className="centre1">
-              <div>
-                <button className="bio" onClick={toggleShow}>
-                  Bio
-                </button>
-              </div>
-              <div>
-                <button className="view" onClick={toggleShow}>
-                  Reviews
-                </button>
-              </div>
+        <div className="col1">
+          <div className="centre1">
+            <div>
+              <button className="bio" onClick={toggleShow}>
+                Bio
+              </button>
             </div>
-
-            <div className="review">
-              {showBio ?  <Bio /> : <Reviews />}
+            <div>
+              <button className="view" onClick={toggleShow}>
+                Reviews
+              </button>
             </div>
           </div>
-        </container>
-      </>
-    );
-  }
+
+          <div className="review">{showBio ? <Bio /> : <Reviews />}</div>
+        </div>
+      </container>
+    </>
+  );
+}
 
 export default Profilepic;
