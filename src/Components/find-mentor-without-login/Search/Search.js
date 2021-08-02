@@ -3,9 +3,17 @@ import "./Search.css";
 import { auth, db } from "../../../firebase";
 // import { peoplee } from "./peoplee";
 import { UseSearchUtility } from "./Utils";
+import Bio from "../../profile/bio";
+import { peoplee } from "../../find-mentor-with-login/search/peoplee";
+
 function Search() {
   const [peoplee, setPeoplee] = useState([]);
+  const [imageid, setImageid] =useState(null)
+  const [Name, setName] = useState([]);
+  const [Location, setLocation] = useState([]);
+  const [Skill, setSkill] = useState([]);
   const user = auth.currentUser;
+
   useEffect(() => {
     db.collection("users")
       .where("role", "==", "mentor")
@@ -14,17 +22,15 @@ function Search() {
         setPeoplee(snapshot.docs.map((doc) => doc.data()));
       });
   }, []);
-  console.log(peoplee);
 
-  const [people, setPeople] = useState(peoplee);
+  const people= peoplee;
+  console.log(people);
   const [searchText, setSearchText] = useState({
     name: "",
     location: "",
     skill: "",
   });
-  const [Name, setName] = useState([]);
-  const [Location, setLocation] = useState([]);
-  const [Skill, setSkill] = useState([]);
+
 
   const peopleNames = (e) => {
     const targetValue = e.target.value.toLowerCase();
@@ -36,6 +42,7 @@ function Search() {
 
     console.log(targetValue);
   };
+
   const peopleLocations = (e) => {
     const targetValue = e.target.value;
     setSearchText({ ...searchText, location: targetValue });
@@ -46,12 +53,13 @@ function Search() {
     setLocation(Array.from(new Set(newLocations)));
     console.log(targetValue);
   };
+
   const peopleExpertise = (e) => {
     const targetValue = e.target.value;
     setSearchText({ ...searchText, expertise: targetValue });
     const newExpertises = peoplee.filter((value) => {
-      if (value.expertise.toLowerCase().includes(targetValue))
-        return value.expertise;
+      if (value.skill.toLowerCase().includes(targetValue))
+        return value.skill;
     });
     setSkill(Array.from(new Set(newExpertises)));
     console.log(targetValue);
@@ -83,7 +91,8 @@ function Search() {
       searchText.location.toLowerCase(),
       searchText.skill.toLowerCase(),
     ];
-    setPeople(UseSearchUtility(arr, peoplee));
+    setPeoplee(UseSearchUtility(arr, peoplee));
+    console.log(peoplee)
   };
 
   return (
@@ -174,7 +183,9 @@ function Search() {
                 <div className="detailswologin">
                   <h5>{value.name}</h5>
                   <span>
-                    <a href="">more &gt;</a>
+                    <a href="/profilepage" 
+                    // onClick={setImageid(i)}
+                    >more &gt;</a>
                   </span>
                 </div>
               </div>
@@ -190,22 +201,22 @@ function Search() {
 
 export default Search;
 
-// import React, { useState, useEffect } from "react";
-// import { auth, db } from "../../../firebase";
 
-// function Search() {
-//   const [peoplee, setPeoplee] = useState([]);
-//   const user = auth.currentUser;
-//   useEffect(() => {
-//     db.collection("users")
-//       .where("role", "==", "mentor")
-//       // .get()
-//       .onSnapshot((snapshot) => {
-//         setPeoplee(snapshot.docs.map((doc) => doc.data()));
-//       });
-//   }, []);
-//   console.log(peoplee);
-//   return <div></div>;
+// export  function Search1(props) {
+//   return (
+//     <div>
+//       <Bio 
+//        name={peoplee.map((data)=>data[props.imageid].name)}
+//        industry={peoplee.map(data=>data[props.imageid].industry)}
+//        about={peoplee.map(data=>data[props.imageid].textabout)}
+//        skill={peoplee.map(data=>data[props.imageid].skill)}
+//        domain={peoplee.map(data=>data[props.imageid].domain)}
+//        image={peoplee.map(data=>data[props.imageid].imageUrl)}
+//        designation={peoplee.map(data=>data[props.imageid].recognition)}
+//       />
+//     </div>
+//   )
 // }
 
-// export default Search;
+
+
