@@ -4,6 +4,7 @@ import Footer from "../profile/footer";
 import Footerdown from "../profile/footerdown";
 import "./Landingpage.css";
 import { useHistory } from "react-router-dom";
+
 const data = {
   rows: [
     {
@@ -32,6 +33,7 @@ const data = {
   ],
 };
 function Landingpage() {
+
   const history=useHistory()
   return (
     

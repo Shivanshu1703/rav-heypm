@@ -2,16 +2,19 @@ import React from "react";
 import { useState } from "react";
 import "./search.css";
 import { peoplee } from "./peoplee";
+
 function Search() {
   const [people, setPeople] = useState(peoplee);
+
   const peopleSearched = (e) => {
     console.log(e.target.value);
     var newPeople = peoplee.filter((value) =>
-      value.expertise.toLowerCase().includes(e.target.value)
+      value.skill.toLowerCase().includes(e.target.value)
     );
     console.log(newPeople);
     setPeople(newPeople);
   };
+
   return (
     <>
       <div className="searchfind">
@@ -35,11 +38,11 @@ function Search() {
         {people.map((value, i) => {
           return (
             <div className="peoplefind" key={i}>
-              <img src={value.image} alt="" />
+              <img src={value.imageUrl} alt="" />
               <div className="detailsfind">
                 <h5>{value.name}</h5>
                 <h5>{value.location}</h5>
-                <span>{value.expertise}</span>
+                <span>{value.skill}</span>
               </div>
             </div>
           );

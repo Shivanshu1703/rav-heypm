@@ -7,10 +7,12 @@ import { auth, db } from "../../firebase";
 import { useHistory } from "react-router-dom";
 
 function Profilepic() {
-  const history = useHistory();
-  const [showBio, setShowBio] = useState(true);
-  const [name, setName] = useState("");
-  const [designation, setDesignation] = useState("");
+    const history=useHistory()
+   const [showBio ,setShowBio] =useState(true)
+   const [name ,setName] =useState("")
+   const [designation,setDesignation]=useState("")
+   const [image, setImage] = useState("")
+   const [imageURL,setImageURL] = useState(null)
 
   const toggleShow = () => {
     setShowBio(!showBio);
@@ -18,37 +20,36 @@ function Profilepic() {
 
   const user = auth.currentUser;
 
-  if (user) {
-    db.collection("users")
-      .doc(user.uid)
-      .get()
-      .then((doc) => {
-        if (doc.data().role === "mentor") {
-          setName(doc.data().name);
-          setDesignation(doc.data().recognition);
-          // console.log(name,designation)
-        } else {
-          setName(doc.data().name);
-          setDesignation(doc.data().designation);
-          // console.log(name,designation)
+ if(user){
+     db.collection("users").doc(user.uid).get()
+     .then(doc => {
+       if(doc.data().role === "mentor"){
+          setName(doc.data().name)
+          setDesignation(doc.data().recognition)
+          setImageURL(doc.data().imageUrl)
+          console.log(imageURL)
         }
-      });
+        else {
+            setName(doc.data().name)
+            setDesignation(doc.data().designation)
+            setImageURL(doc.data().imageUrl)
+            // console.log(name,designation)
+        }
+    })
   }
   return (
-    <>
+     <>
       <container className="container">
-        <div className="row1">
-          <div className="pic">
-            <img src={img1} alt="prifilepic" /> <br />
-            <h3>{name}</h3>
-            <p>{designation}</p>
-          </div>
-          <div className="col2">
-            <button id="hi" onClick={() => history.push("/chatbox")}>
-              Connect!
-            </button>
-          </div>
-        </div>
+          <div className="row1">
+            <div className="pic">
+              <img src={imageURL} alt="" width="144px" height="124px"  /> <br />
+              <h3>{name}</h3>
+              <p>{designation}</p>
+            </div>
+            <div className="col2">
+              <button id="hi" onClick={()=> history.push("/chatbox")}>Connect!</button>
+            </div>
+           </div>
 
         <div className="col1">
           <div className="centre1">
