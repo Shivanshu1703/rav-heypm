@@ -76,7 +76,7 @@ export default function Body1() {
       imageUrl: imageUrl,
     };
     await db.collection("users").doc(user.uid).set(data);
-    history.push("/profilepage");
+    // history.push("/profilepage");
 
     //mail verification
     user
