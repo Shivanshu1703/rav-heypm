@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/mentorpage" component={Mentorpage} />
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/schedule" component={Schedule} />
-        <Route exact path="/home" component={Landingpage} />
+        <Route exact path="/" component={Landingpage} />
         <Route exact path="/chatbox" component={Chatbox} />
         <Route exact path="/findlogin" component={FindMentorLogin} />
         <Route
