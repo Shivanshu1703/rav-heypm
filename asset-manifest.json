@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/rav-heypm/static/css/main.bba611dd.chunk.css",
+    "main.js": "/rav-heypm/static/js/main.e7c6e2c0.chunk.js",
+    "main.js.map": "/rav-heypm/static/js/main.e7c6e2c0.chunk.js.map",
+    "runtime-main.js": "/rav-heypm/static/js/runtime-main.c9356bf4.js",
+    "runtime-main.js.map": "/rav-heypm/static/js/runtime-main.c9356bf4.js.map",
+    "static/js/2.9be5ed46.chunk.js": "/rav-heypm/static/js/2.9be5ed46.chunk.js",
+    "static/js/2.9be5ed46.chunk.js.map": "/rav-heypm/static/js/2.9be5ed46.chunk.js.map",
+    "static/js/3.4e006890.chunk.js": "/rav-heypm/static/js/3.4e006890.chunk.js",
+    "static/js/3.4e006890.chunk.js.map": "/rav-heypm/static/js/3.4e006890.chunk.js.map",
+    "index.html": "/rav-heypm/index.html",
+    "static/css/main.bba611dd.chunk.css.map": "/rav-heypm/static/css/main.bba611dd.chunk.css.map",
+    "static/js/2.9be5ed46.chunk.js.LICENSE.txt": "/rav-heypm/static/js/2.9be5ed46.chunk.js.LICENSE.txt",
+    "static/media/Datasecurity.e7ea5ec6.png": "/rav-heypm/static/media/Datasecurity.e7ea5ec6.png",
+    "static/media/profilepic.a40a4cd6.png": "/rav-heypm/static/media/profilepic.a40a4cd6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9356bf4.js",
+    "static/js/2.9be5ed46.chunk.js",
+    "static/css/main.bba611dd.chunk.css",
+    "static/js/main.e7c6e2c0.chunk.js"
+  ]
+}
